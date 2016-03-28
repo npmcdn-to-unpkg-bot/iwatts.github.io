@@ -88,7 +88,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+.main-body.home {
+    background-image: url("img/programming.jpg");
+    background-size: cover;
+}
 
 
 
