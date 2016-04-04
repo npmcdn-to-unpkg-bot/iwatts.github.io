@@ -107,6 +107,25 @@ h1,h2,h3,h4,h5,h6 {
     max-width: 1080px;
     margin: 0 auto;
 }
+.main-body .menu-bar .menu-body a {
+    color: #00ff00;
+    margin: 5px 10px;
+    text-decoration: none;
+}
+.main-body .menu-bar .menu-body a:hover {
+    color: #fff;
+}
+.main-body .menu-bar .menu-body a.active {
+    color: rgba(0,255,0,0.4);
+}
+.main-body .menu-bar .menu-body .menu-left{
+    float: left;
+    margin: 0px 20px;
+}
+.main-body .menu-bar .menu-body .menu-right{
+    float: right;
+    margin: 0px 20px;
+}
 .main-body.home {
     background-image: url("../img/programming.jpg");
     background-size: cover;
@@ -114,19 +133,19 @@ h1,h2,h3,h4,h5,h6 {
 .main-body .mask {
     background-color: rgba(0, 40, 0, 0.9);
 }
-.main-body .home-body {
+.main-body .bodyshell {
     max-width: 1080px;
     height: 86vh;
     margin: 0 auto;
     padding: 90px 30px 0px;
     font-family: 'Raleway', sans-serif;
 }
-.main-body .home-body .content-left {
+.main-body .bodyshell .content-left {
     width: 49%;
     display: inline-block;
     vertical-align: middle;
 }
-.main-body .home-body .content-left .feature-image {
+.main-body .bodyshell .content-left .feature-image {
     background-size: cover;
     width: 300px;
     height: 300px;
@@ -134,7 +153,7 @@ h1,h2,h3,h4,h5,h6 {
     border: 1px solid #00ff00;
     margin: 0 auto;
 }
-.main-body .home-body .content-left .feature-text {
+.main-body .bodyshell .content-left .feature-text {
     max-width: 300px;
     background: #000;
     padding: 5px 20px;
@@ -146,18 +165,18 @@ h1,h2,h3,h4,h5,h6 {
     top: -75px;
     right: -14%;
 }
-.main-body .home-body .content-right {
+.main-body .bodyshell .content-right {
     width: 49%;
     display: inline-block;
     vertical-align: middle;
 }
-.main-body .home-body .content-right .main-info {
+.main-body .bodyshell .content-right .main-info {
     margin: 0 auto;
     padding: 0px 30px;
     text-align: center;
 }
-.main-body .home-body .content-right .main-info p,
-.main-body .home-body .content-right .main-info h1 {
+.main-body .bodyshell .content-right .main-info p,
+.main-body .bodyshell .content-right .main-info h1 {
     text-align: left;
 }
 .main-body a.cta-shell {
@@ -181,8 +200,25 @@ h1,h2,h3,h4,h5,h6 {
     animation-iteration-count: infinite;
 }
 
-
-
+.main-body .bodyshell form {
+text-align: center;
+}
+.main-body .bodyshell form fieldset {
+    border: 1px solid #fff;
+    padding: 10px;
+}
+.main-body .bodyshell form fieldset input {
+    width: 60%;
+    margin: 15px auto;
+}
+.main-body .bodyshell form input[type="submit"] {
+    background: #6f6f6f;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    margin: 15px 0px;
+    padding: 5px 20px;
+}
 
 
 
