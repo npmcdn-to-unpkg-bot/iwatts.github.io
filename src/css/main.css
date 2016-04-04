@@ -161,23 +161,23 @@ h1,h2,h3,h4,h5,h6 {
     text-align: left;
 }
 .main-body a.cta-shell {
-    color: #000;
-}
-.main-body a.cta-shell:hover {
     color: #fff;
 }
+.main-body a.cta-shell:hover {
+    text-decoration: underline;
+}
 @keyframes flash {
-    0%   {background-color: #696969;}
-    49%   {background-color: #696969;}
-    50%  {background-color: #426942;}
-    99%  {background-color: #426942;}
-    100%   {background-color: #696969;}
+    0%   {background-color: transparent;}
+    49%   {background-color: transparent;}
+    50%  {background-color: #696969;}
+    99%  {background-color: #696969;}
+    100%   {background-color: transparent;}
 }
 .main-body a.cta-shell .cta-button {
     display: inline-block;
     padding: 2px 15px;
     animation-name: flash;
-    animation-duration: 1.8s;
+    animation-duration: 1.2s;
     animation-iteration-count: infinite;
 }
 
