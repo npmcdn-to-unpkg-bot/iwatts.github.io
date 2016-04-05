@@ -220,6 +220,36 @@ text-align: center;
     padding: 5px 20px;
 }
 
+/*.content-full {
+    width: 100%;
+}*/
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+    width: 33.333%;
+}
+.grid-item.grid-item--width2 { width: 66.666%; }
+
+.grid-item {
+    float: left;
+    border: 5px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.grid-item img {
+    display: block;
+    max-width: 100%;
+}
+
 
 
 /* ==========================================================================
