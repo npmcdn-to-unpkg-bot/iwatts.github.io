@@ -136,7 +136,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .main-body .bodyshell {
     max-width: 1080px;
-    height: 86vh;
+    height: 100vh;
     margin: 0 auto;
     padding: 90px 30px 0px;
     font-family: 'Raleway', sans-serif;
@@ -165,7 +165,14 @@ h1,h2,h3,h4,h5,h6 {
     position: relative;
     top: -75px;
     right: -14%;
+    font-family: Courier;
 }
+
+.main-body .bodyshell .content-left .feature-text p {
+    margin: 5px 0 0 10px;
+    overflow: hidden;
+}
+
 .main-body .bodyshell .content-right {
     width: 49%;
     display: inline-block;
@@ -193,13 +200,20 @@ h1,h2,h3,h4,h5,h6 {
     99%  {background-color: #696969;}
     100%   {background-color: transparent;}
 }
+@keyframes type{
+    from { width: 0; }
+}
 .main-body a.cta-shell .cta-button {
     display: inline-block;
-    padding: 2px 15px;
+    padding: 2px 10px;
     border: 1px solid #fff;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
+    width: 6em;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: type 2s steps(12, end);
 }
 .main-body a.cta-shell .cta-button .cta-flash {
     animation-name: flash;
@@ -236,6 +250,7 @@ text-align: center;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
+    cursor: pointer;
 }
 
 /*.content-full {
@@ -288,13 +303,13 @@ text-align: center;
     }
 }
 @media screen and (max-width: 635px) {
-    .main-body .home-body .content-right {
+    .main-body .bodyshell .content-right {
         width: auto;
         display: block;
         vertical-align: middle;
         padding-bottom: 20px;
     }
-    .main-body .home-body .content-left {
+    .main-body .bodyshell .content-left {
         width: auto;
         display: block;
         vertical-align: middle;
