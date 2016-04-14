@@ -144,7 +144,7 @@ h1,h2,h3,h4,h5,h6 {
 .main-body .bodyshell .content-left {
     width: 49%;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .main-body .bodyshell .content-left .feature-image {
     background-size: cover;
@@ -176,7 +176,7 @@ h1,h2,h3,h4,h5,h6 {
 .main-body .bodyshell .content-right {
     width: 49%;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .main-body .bodyshell .content-right .main-info {
     margin: 0 auto;
