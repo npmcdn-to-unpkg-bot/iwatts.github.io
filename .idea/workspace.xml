@@ -142,6 +142,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -162,8 +164,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,15 +284,17 @@
       <workItem from="1460987202181" duration="861000" />
       <workItem from="1461159029974" duration="1767000" />
       <workItem from="1461245365912" duration="418000" />
+      <workItem from="1461331749198" duration="652000" />
+      <workItem from="1461591415285" duration="51000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35659000" />
+    <option name="totallyTimeSpent" value="36362000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1268" height="955" extended-state="1" />
-    <editor active="false" />
+    <frame x="0" y="24" width="1268" height="955" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24939856" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
