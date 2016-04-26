@@ -32,3 +32,14 @@ var moonWeight = (weight / eg) * mg;
 var jupiterWeight = (weight / eg) * jg;
 console.log(moonWeight);
 console.log(jupiterWeight);
+
+var string = "String";
+var number = 1;
+var array = ["Apple", "Orange", "Banana"];
+var object = {
+    firstName:"Isaac",
+    lastName:"Watts",
+    age:27,
+    eyeColor:"blue",
+    someArray:[1, 2, 3]
+};
