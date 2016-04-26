@@ -43,3 +43,13 @@ var object = {
     eyeColor:"blue",
     someArray:[1, 2, 3]
 };
+
+var myString = String(400+56);
+console.log(myString);
+
+
+var myBool = false;
+console.log(String(myBool));
+console.log(Number(myBool));
+
+console.log(Number())

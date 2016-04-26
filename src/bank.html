@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="bank.js"></script>
+    <style>
+        body {
+            width: 100%;
+            height:auto;
+            text-align: center;
+        }
+        .button {
+            border: 1px solid #000;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h3>Bank</h3>
+
+    <div id="container">
+        <div class="balance-shell">
+            <div class="balance-log">
+                Current Balance: $<span id="balance">5.00</span>
+            </div>
+        </div>
+        <div class="balance-buttons">
+            <div class="button" id="add5" onClick="adjust(5)">+ $5.00</div>
+            <div class="button" id="min10" onClick="adjust(-10)">- $10.00</div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+
+    var origBalance = document.getElementById("balance").innerHTML;
+    var newBalance = origBalance;
+
+    function adjust(num) {
+        newBalance = Number(newBalance) + num;
+        document.getElementById("balance").innerHTML = newBalance.toFixed(2);
+    }
+
+</script>
+</html>
+
