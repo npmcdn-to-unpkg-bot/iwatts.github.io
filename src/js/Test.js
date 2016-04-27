@@ -52,4 +52,4 @@ var myBool = false;
 console.log(String(myBool));
 console.log(Number(myBool));
 
-console.log(Number())
+
