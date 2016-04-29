@@ -20,13 +20,42 @@
 
 <!-- Add your site or application content here -->
 <div class="main-index">
-    <h1>Hello World</h1>
+    <h1 id="my-title">Hello World</h1>
 </div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="src/js/plugins.js"></script>
+<script src="src/js/main.js"></script>
+
+<script>
+
+    function modifyColor(id, color) {
+        document.getElementById(id).style.color = color;
+    }
+    modifyColor('my-title', 'blue');
+
+    function execute() {
+        modifyColor('my-title', 'gray');
+    }
+
+    window.setTimeout(execute, 2000);
+
+    function fib(n) {
+        if(n <= 0) {
+            return 0;
+        }
+        else if(n <= 2) {
+            return 1;
+        }
+        else {
+            return fib(n - 2) + fib(n - 1);
+        }
+    }
+
+    console.log(fib(9));
+
+</script>
 
 </body>
 </html>
