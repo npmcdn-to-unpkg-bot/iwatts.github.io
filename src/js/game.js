@@ -17,7 +17,7 @@ function randarr(arr) {
     return arr[randomSelect];
 }
 
-//Randomize array
+//update score
 function scorelog(num) {
     score += num;
     document.getElementById("score").innerHTML = score;
@@ -32,7 +32,6 @@ function rungame(){
 // randomly select a food to put in the box
 function getfood(){
     return randarr(foodarr);
-
 }
 
 // put the food in the box
@@ -60,7 +59,7 @@ function eatit(){
 function trashit(){
     //if the food is good
     if(currentfood == "Bubble Gum" || currentfood == "Taffy" || currentfood == "Cotton Candy"){
-        document.getElementById("commentbox").innerHTML = "But It looks tasty!";
+        document.getElementById("commentbox").innerHTML = "But it looks tasty!";
         scorelog(-1);
     }
     // if the food is bad

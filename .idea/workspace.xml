@@ -4,6 +4,7 @@
     <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NodeProject/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/game.js" afterPath="$PROJECT_DIR$/src/js/game.js" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -61,18 +62,18 @@
       <file leaf-file-name="functionGame.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/functionGame.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
+            <state relative-caret-position="214">
               <caret line="100" column="2" selection-start-line="100" selection-start-column="2" selection-end-line="100" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+            <state relative-caret-position="195">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,8 +111,8 @@
         <option value="$PROJECT_DIR$/src/js/function.html" />
         <option value="$PROJECT_DIR$/src/function.html" />
         <option value="$PROJECT_DIR$/src/functionGame.html" />
-        <option value="$PROJECT_DIR$/src/js/game.js" />
         <option value="$PROJECT_DIR$/src/js/functions.js" />
+        <option value="$PROJECT_DIR$/src/js/game.js" />
       </list>
     </option>
   </component>
@@ -353,12 +354,12 @@
       <workItem from="1461678732139" duration="7153000" />
       <workItem from="1461764374377" duration="1996000" />
       <workItem from="1461850219462" duration="5111000" />
-      <workItem from="1461937736289" duration="156000" />
+      <workItem from="1461937736289" duration="522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52860000" />
+    <option name="totallyTimeSpent" value="53226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1268" height="955" extended-state="0" />
@@ -757,7 +758,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/functionGame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
+        <state relative-caret-position="214">
           <caret line="100" column="2" selection-start-line="100" selection-start-column="2" selection-end-line="100" selection-end-column="2" />
           <folding />
         </state>
@@ -765,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        <state relative-caret-position="195">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
