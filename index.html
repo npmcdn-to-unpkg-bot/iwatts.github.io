@@ -21,6 +21,19 @@
 <!-- Add your site or application content here -->
 <div class="main-index">
     <h1 id="my-title">Hello World</h1>
+    <div class="businessCard">
+        <div class="logo"></div>
+        <div class="c-info">
+            <div class="left">
+                <div class="position"></div>
+                <div class="email"></div>
+            </div>
+            <div class="right">
+                <div class="number"></div>
+                <div class="website"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -53,8 +66,41 @@
         }
     }
 
+    function fac(int) {
+        if(int <= 0) {
+            return 1;
+        }
+        return int * fac(int - 1);
+
+    }
+
     console.log(fib(6));
 
+    console.log(fac(8));
+
+    var car = {
+        type:"Fiat",
+        model:"500",
+        color:"white",
+        miles:8500,
+        max_speed:120,
+        interior:"black",
+    };
+    var me = {
+        name:"Isaac Watts",
+        phone: "801.577.9531",
+        position: "Web Developer",
+        p_site:"http://iwatts.github.io",
+        email:"theicean@gmail.com"
+    }
+    $( document ).ready(function() {
+        console.log( "ready!" );
+        $('.logo').append("<h3>" + me.name + "</h3>");
+        $('.position').append(me.position);
+        $('.number').append(me.phone);
+        $('.email').append("<a href='mailto:" + me.email +"'>" + me.email + "</a>");
+        $('.website').append("<a href='" + me.p_site +"'>" + me.p_site + "</a>");
+    });
 </script>
 
 </body>

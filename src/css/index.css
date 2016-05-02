@@ -1,3 +1,26 @@
 #my-title {
     transition: all 1s;
 }
+.main-index {
+    text-align: center;
+}
+.businessCard {
+    display: inline-block;
+    width: 260px;
+    border: 6px ridge cornflowerblue;
+    padding: 15px;
+}
+.businessCard .logo h3 {
+    padding-bottom: 20px;
+}
+.businessCard .c-info {
+    font-size: 12px;
+}
+.businessCard .c-info .left {
+    float: left;
+    text-align: left;
+}
+.businessCard .c-info .right {
+    float: right;
+    text-align: right;
+}
