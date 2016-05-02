@@ -9,6 +9,10 @@
     width: 260px;
     border: 6px ridge cornflowerblue;
     padding: 15px;
+    background-image: url(../img/dash-offset.png);
+    background-size: cover;
+    background-position: 0px -13px;
+    background-repeat: no-repeat;
 }
 .businessCard .logo h3 {
     padding-bottom: 20px;
