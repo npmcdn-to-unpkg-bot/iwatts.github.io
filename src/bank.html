@@ -48,6 +48,44 @@
         document.getElementById("balance").innerHTML = newBalance.toFixed(2);
     }
 
+    var Profile = function (name, savings, checking) {
+        this.name = name;
+        this.savings = savings;
+        this.checking = checking;
+
+        this.transfer = function (accountTo, accountFrom, amount) {};
+    }
+    var Account = function (balance, accountNumber) {
+        this.balance = balance;
+        this.accountNumbet = accountNumber;
+
+        this.withdraw = function (amount) {};
+        this.deposit = function (amount) {};
+    }
+    var savingsAccount = function (interestRate) {
+        this.interestRate = interestRate;
+    }
+    var checkingAccount = function (numberOfChecks) {
+        this.numberOfChecks = numberOfChecks;
+    }
+    function createProfile(name, checkingBalance, savingsBalance, interestRate, numberOfChecks) {
+
+        checkingAccount.prototype = Object.create(Account.prototype);
+        checkingAccount.balance = checkingBalance;
+        checkingAccount.accountNumber = 1234567890;
+
+        savingsAccount.prototype = Object.create(Account.prototype);
+        savingsAccount.balance = savingsBalance;
+        savingsAccount.accountNumber = 011235813;
+
+        var checkingAccount = new checkingAccount(numberOfChecks);
+        var savingsAccount = new savingsAccount(interestRate);
+
+        var profile = new Profile(name, savingsAccount, checkingAccount);
+
+        return profile;
+    }
+
 </script>
 </html>
 
