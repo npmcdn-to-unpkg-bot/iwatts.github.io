@@ -57,29 +57,29 @@
     }
     var Account = function (balance, accountNumber) {
         this.balance = balance;
-        this.accountNumbet = accountNumber;
+        this.accountNumber = accountNumber;
 
         this.withdraw = function (amount) {};
         this.deposit = function (amount) {};
     }
-    var savingsAccount = function (interestRate) {
+    var SavingsAccount = function (interestRate) {
+        Account.call(this, balance, accountNumber);
         this.interestRate = interestRate;
     }
-    var checkingAccount = function (numberOfChecks) {
+    var CheckingAccount = function (numberOfChecks) {
+        Account.call(this, balance, accountNumber);
         this.numberOfChecks = numberOfChecks;
     }
-    function createProfile(name, checkingBalance, savingsBalance, interestRate, numberOfChecks) {
 
-        checkingAccount.prototype = Object.create(Account.prototype);
-        checkingAccount.balance = checkingBalance;
-        checkingAccount.accountNumber = 1234567890;
+    CheckingAccount.prototype = Object.create(Account.prototype);
+    CheckingAccount.prototype.constructor = CheckingAccount;
+    SavingsAccount.prototype = Object.create(Account.prototype);
+    SavingsAccount.prototype.constructor = SavingsAccount;
 
-        savingsAccount.prototype = Object.create(Account.prototype);
-        savingsAccount.balance = savingsBalance;
-        savingsAccount.accountNumber = 011235813;
+    function createProfile(name, checkingsBalance, savingsBalance, interestRate, numberOfChecks) {
 
-        var checkingAccount = new checkingAccount(numberOfChecks);
-        var savingsAccount = new savingsAccount(interestRate);
+        var checkingAccount = new CheckingAccount(numberOfChecks, checkingsBalance, 1234567890);
+        var savingsAccount = new SavingsAccount(interestRate, savingsBalance, 1123581321);
 
         var profile = new Profile(name, savingsAccount, checkingAccount);
 
