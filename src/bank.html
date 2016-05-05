@@ -40,6 +40,8 @@
 </body>
 <script>
 
+    var bankProfiles = [];
+
     var origBalance = document.getElementById("balance").innerHTML;
     var newBalance = origBalance;
 
@@ -85,6 +87,8 @@
 
         return profile;
     }
+
+    bankProfiles.push(createProfile("Isaac", 100, 100, .05, 3));
 
 </script>
 </html>
