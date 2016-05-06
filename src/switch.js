@@ -13,9 +13,27 @@ function Myfunction(myID) {
 
 }
 
+function runTime() {
+    var time = new Date();
+    var hr = time.getHours();
+    var min = time.getMinutes();
+    var s = time.getSeconds();
+    min = checkTime(min);
+    s = checkTime(s);
+    var ampm = hr < 12 ? "am" : "pm";
+    var t = setTimeout(runTime, 500);
+
+    document.getElementById("current_time").innerHTML = hr + ":" + min + ":" + s + " " + ampm;
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
 function listDay() {
     var d = new Date().getDay();
     var dateIntro = "Today is ";
+    runTime();
 
     switch (d) {
         case 0:

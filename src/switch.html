@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <title>Switch</title>
     <script src="switch.js"></script>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
 </head>
 <body onload="listDay()">
-    <h1>What time is it?</h1>
-    <button id="1pm" onClick="Myfunction(this.id);">1 pm</button>
-    <button id="6pm" onClick="Myfunction(this.id);">6 pm</button>
-    <div id="dayofweek"></div>
+    <div class="container">
+        <h1>What time is it?</h1>
+        <button id="1pm" onClick="Myfunction(this.id);">1 pm</button>
+        <button id="6pm" onClick="Myfunction(this.id);">6 pm</button>
+        <p></p>
+        <div id="dayofweek"></div>
+        <p></p>
+        <div id="current_time"></div>
+    </div>
 </body>
 </html>
