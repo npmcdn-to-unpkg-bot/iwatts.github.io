@@ -9,7 +9,7 @@ function Myfunction(myID) {
             break;
         case "6pm":
             alert("Good Evening.");
-    }git
+    }
 
 }
 
