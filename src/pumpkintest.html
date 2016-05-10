@@ -21,9 +21,39 @@
         .pumpkin2{width: 140px; height: 127px; background-image:url(img/pumpkin2.png); position:absolute;}
         .pumpkin3{width: 140px; height: 127px; background-image:url(img/pumpkin3.png); position:absolute;}
         .pumpkin4{width: 140px; height: 127px; background-image:url(img/pumpkin4.png); position:absolute;}
-        .follow{width: 140px; height: 127px; position:absolute; z-index: 1000; background-image:url(img/pumpkinguide.png);}
-        #title, #numbertitle, span{color: #FFFFFF; padding: 15px; font-size: 16px;}
-        #stats{ background-color:#363636; widht: 300px; height: 30px; padding: 8px; float:left; }
+        .scorebox{
+            width: 84%;
+            height: 20px;
+            /*border: 1px solid blue;*/
+            position: absolute;
+            top: 400px;
+            left: 0px;
+            right: 0px;
+            margin: 0 auto;
+            -ms-transform: rotate(1.8deg);
+            -webkit-transform: rotate(1.8deg);
+            transform: rotate(1.8deg);
+            z-index: 999999;
+        }
+        .follow{
+            width: 140px;
+            height: 127px;
+            position:absolute;
+            z-index: 1000;
+            background-image:url(img/pumpkinguide.png);
+        }
+        #title, #numbertitle, span{
+            color: #FFFFFF;
+            padding: 15px;
+            font-size: 16px;
+        }
+        #stats{
+            background-color:#363636;
+            width: 300px;
+            height: 30px;
+            padding: 8px;
+            float:left;
+        }
 
     </style>
 
@@ -37,8 +67,8 @@
     <span>Number of Pumpkins:</span><span id="numbertitle"></span>
 </div>
 
-<div id="container" onClick="addPumpkin(event)">
-
+<div id="container" onClick="clickGame(event)">
+    <div class="scorebox"></div>
 </div>
 <div id="followpumpkin" class="follow"></div>
 <script src="pumpkin.js"></script>

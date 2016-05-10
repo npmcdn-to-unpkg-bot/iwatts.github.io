@@ -18,16 +18,28 @@ function addPumpkin(event) {
     var randomPumpkin = Math.floor((Math.random() * 4) + 1);
 
     var xAdjust;
-    xAdjust = 290;
+    xAdjust = 380;
     var yAdjust = 8;
 
     var x = event.clientX - xAdjust;
     var y = event.clientY + yAdjust;
     pumpkinpatch += "<div class='pumpkin" + randomPumpkin + "' style='left: " + x + "px; top:" + y + "px;'></div>";
-    document.getElementById("container").innerHTML = pumpkinpatch;
+
+    //document.getElementById("container").innerHTML = pumpkinpatch;
+    $("#container").append(pumpkinpatch);
+
+    // if in score box, ++ score
     numpumpkins ++;
     document.getElementById("numbertitle").innerHTML = numpumpkins;
 
+}
+
+function clickGame(event) {
+    if ($('.scorebox:hover').length > 0) {
+        addPumpkin(event);
+    } else {
+        //miss
+    }
 }
 
 document.getElementById("title").innerHTML = gametitle;
