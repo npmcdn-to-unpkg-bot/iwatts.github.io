@@ -296,6 +296,12 @@ text-align: center;
 .main-body .grid .grid-item:hover .mask {
     background-color: rgba(0, 0, 0, 0);
 }
+.more_listing ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 10px;
+}
+
 
 /* ==========================================================================
    Custom Mobile Styles
