@@ -59,3 +59,9 @@ function listDay() {
             break;
     }
 }
+
+var global;
+
+function test() {
+    var local = global;
+}
