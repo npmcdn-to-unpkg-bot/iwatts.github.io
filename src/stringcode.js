@@ -30,11 +30,8 @@ function sendLetter(theletter) {
     // We need to concatenate the strings together.
     fullString = currentstring.join();
     fullString = fullString.replace( /,/g, "" );
-
-    console.log(fullString);
-
-    checkmyAnswer();
     outputcontdiv.innerHTML = fullString;
+    checkmyAnswer();
     // I want you to make it print to the page in lower case.
 
     i++;
