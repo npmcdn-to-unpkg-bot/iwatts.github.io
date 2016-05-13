@@ -2,7 +2,7 @@
  * Created by isaacwatts on 5/5/16.
  */
 
-console.log("Ready");
+/*console.log("Ready");
 
 var listOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -50,6 +50,4 @@ listOfNumbers.forEach(function (value, index, object) {
 
 var done = false;
 
-while (!done && times > 0) {
-
-}
+*/

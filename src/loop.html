@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .button {
+            border: solid 1px #000;
+            display: inline-block;
+            padding: 2px 5px;
+            cursor: pointer;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
     <script src="loop.js"></script>
 </head>
-<body>
+<body onload="exe1()">
     <div id="mycar"></div>
+    <div class="button" onclick="guessing()">Guessing game</div>
+    <div id="guess-result"></div>
+    <div class="clear"></div>
+    <hr>
+    <div class="button" onclick="mathFunc('mult')">Mutiply</div>
+    <div class="button" onclick="mathFunc('div')">Divide</div>
+    <div id="math-result"></div>
+    <div class="clear"></div>
+    <hr>
+    <div class="button" onclick="futureDate()">Guessing game</div>
+    <div id="date-result"></div>
+    <div class="clear"></div>
+    <hr>
+    <div class="button" onclick="futureDate()">Guessing game</div>
+    <div id="date-result"></div>
+    <div class="clear"></div>
+    <hr>
 </body>
+
+<script>
+
+    function guessing() {
+        var randNum = Math.floor(Math.random()*10) + 1;
+        var guess = prompt("Enter a number between 1-10");
+        if (guess == randNum ) {
+            document.getElementById("guess-result").innerHTML = "You win!";
+        } else {
+            document.getElementById("guess-result").innerHTML =
+                "Sorry, try again! The number was " + randNum;
+        }
+    }
+    function mathFunc(m) {
+        var int1 = prompt("Enter a number");
+        var int2 = prompt("Enter a second number");
+        var total = 0;
+        if (m == "mult") {
+            total = int1 * int2;
+            document.getElementById("math-result").innerHTML = int1 + "*" + int2 + " = " + total;
+        } else if (m == "div") {
+            total = int1 / int2;
+            document.getElementById("math-result").innerHTML = int1 + "/" + int2 + " = " + total;
+        }
+    }
+    function futureDate() {
+        var d = new Date();
+        var n = d.getDate();
+        document.getElementById("date-result").innerHTML = n;
+    }
+    function exe1() {
+        var myString = "rock on world";
+
+        //var newString = "";
+
+        for (var t = 0; t < myString.length; t++) {
+            //var strnlength = myString.length - 1;
+            //var last = myString[strnlength];
+            if( typeof myString == "string") {
+                myString = myString.split("");
+                //alert("String alert");
+            };
+            var last = myString.pop();
+            myString.splice(0, 0, last);
+            //myString = myString.toString().replace(/,/g,"");
+            //var newString = myString.split(0, 0, "last");
+
+            //console.log(myString);
+            console.log(myString.toString().replace(/,/g,""));
+            //console.log(last);
+            //console.log(newString);
+        }
+        console.log(myString.toString().replace(/,/g,""));
+        //console.log(myString);
+    }
+</script>
+
 </html>
