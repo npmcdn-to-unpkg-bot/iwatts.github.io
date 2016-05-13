@@ -301,7 +301,21 @@ text-align: center;
     display: inline-block;
     padding: 0px 10px;
 }
-
+.more-parent {
+    position: relative;
+}
+.more-parent .more-section {
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+}
+.resume-nav .button {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
 
 /* ==========================================================================
    Custom Mobile Styles
