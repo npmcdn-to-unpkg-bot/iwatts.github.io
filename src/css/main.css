@@ -316,6 +316,15 @@ text-align: center;
     padding: 4px 10px;
     cursor: pointer;
 }
+ul.bar li {
+    list-style: none;
+    width: 230px;
+    background-color: #666;
+    margin: 10px 5px;
+    padding: 2px 5px;
+    float: left;
+    border-radius: 5px;
+}
 
 /* ==========================================================================
    Custom Mobile Styles
