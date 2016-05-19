@@ -62,3 +62,17 @@ promise.then(function (toss) {
     result();
 
 });
+
+function handleSubmission(data) {
+    try {
+        validateSubmission(data);
+    }
+    catch (error){
+        console.log("The following error was handled:" + error);
+    }
+}
+ function validateSubmission(data) {
+     if (data == "") throw "Data is Empty";
+     if (data == undefined) throw "Data is Undefined";
+     if (data == null) throw "Data is Null";
+ }

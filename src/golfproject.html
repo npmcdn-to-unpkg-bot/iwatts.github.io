@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golf Sheet</title>
+    <style>
+        #scorecard {
+            text-align: center;
+        }
+        #scorecard .column {
+            border: solid 1px;
+            border-bottom: none;
+            display: inline-block;
+        }
+        #scorecard .column:last-child {
+            border-bottom: solid 1px;
+        }
+        #scorecard .column div {
+            display: inline-block;
+            border-right: 1px solid;
+            padding: 5px 15px;
+        }
+        #scorecard .column div:last-child {
+            border-right: none;
+        }
+        #scorecard .column div input {
+            width: 20px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/golfproject.js"></script>
+</head>
+<body onload="runcode()">
+
+    <div id="scorecard">
+
+
+
+
+    </div>
+
+</body>
+</html>
