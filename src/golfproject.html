@@ -6,6 +6,21 @@
     <style>
         #scorecard {
             text-align: center;
+            min-width: 730px;
+        }
+        #scorecard .column.column-title div {
+            color: #fff;
+            background-color: #666;
+        }
+        #scorecard .column.column-title .title-hole {
+            padding: 5px 0px;
+            min-width: 32px;
+            display: inline-block;
+        }
+        #scorecard .column.column-title .title-players {
+            min-width: 132px;
+            border-left: none;
+            padding: 5px 0px;
         }
         #scorecard .column {
             border: solid 1px;
@@ -18,10 +33,15 @@
         #scorecard .column div {
             display: inline-block;
             border-left: 1px solid;
-            padding: 5px 15px;
         }
         #scorecard .column div input {
-            width: 20px;
+            width: 12px;
+            border: none;
+            padding: 5px 10px;
+        }
+        .player-control {
+            text-align: center;
+            padding: 20px 0px;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -34,6 +54,10 @@
 
 
 
+    </div>
+    <div class="player-control">
+        <button onclick="playerCount(1)">Add Player</button>
+        <button onclick="playerCount(-1)">Remove Player</button>
     </div>
 
 </body>
