@@ -68,6 +68,8 @@
         .player-control {
             text-align: center;
             padding: 20px 0px;
+            position: relative;
+            z-index: 20;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -76,7 +78,11 @@
 <body onload="runcode()">
     <div class="mask"></div>
 
-    <div class="course-menu">Course selection will go here</div>
+    <div class="course-menu">
+        Course selection will go here
+        <p id="demo"></p>
+        <button onclick="myStopFunction()">Stop Time</button>
+    </div>
 
     <div id="scorecard"></div>
 

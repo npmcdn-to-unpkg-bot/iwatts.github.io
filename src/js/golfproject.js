@@ -1,6 +1,6 @@
 var numplayers = 6;
 var numholes = 18;
-
+var myTime = setInterval(function () { myTimer(), 1000});
 
 function runcode() {
     var titleRow = "<div class='column column-title'><div class='title-players'>Players</div></div>";
@@ -46,4 +46,13 @@ function playerCount(numChange) {
     numplayers += numChange;
     $("#scorecard").empty();
     runcode();
+}
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = t;
+}
+
+function myStopFunction() {
+    clearInterval(myTime);
 }
