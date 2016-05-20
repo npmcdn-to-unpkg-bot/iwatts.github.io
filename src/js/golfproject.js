@@ -4,7 +4,10 @@ var myTime = setInterval(function () { myTimer(), 1000});
 
 function runcode() {
     var titleRow = "<div class='column column-title'><div class='title-players'>Players</div></div>";
+    var totalRow = "<div class='column-total'><div class='total-score'>Score</div></div>";
     var holeList = "";
+    var scoreTotals = "";
+
     $("#scorecard").append(titleRow);
     for(var h = 1; h <= numholes; h++) {
         var holeTitle = "<div class='title-hole'>" + h + "</div>";
@@ -15,13 +18,17 @@ function runcode() {
         var playerRow = "<div class='column pc-" + p + "'><input type='text' value='player" + p + "'></div>";
         $("#scorecard").append(playerRow);
         collectholes(p);
+        var totalTitle = "<div class='player-total' id='player-" + p + "-total'>0</div>";
+        scoreTotals += totalTitle
     }
+    $("#scorecard").append(totalRow);
+    $("#scorecard .column-total").append(scoreTotals);
 }
 
 function collectholes(player){
     var golfcourse = "";
     for(var h = 1; h <= numholes; h++){
-        var hole = "<div id='player" + player +"hole" + h +"'><input onkeypress='validate(event)' type='text' value=''></div>";
+        var hole = "<div class='singlehole' id='player" + player +"hole" + h +"'><input onchange='validate()' type='text' value=''></div>";
         golfcourse += hole;
         var apTo = ".pc-" + player;
 
@@ -30,16 +37,11 @@ function collectholes(player){
 
 }
 
-function validate(evt) {
-    var theEvent = evt || window.event;
-    var key = theEvent.keyCode || theEvent.which;
-    key = String.fromCharCode( key );
-    var regex = /[0-9-]/;
-    if( !regex.test(key) ) {
-        theEvent.returnValue = false;
-        alert("Please enter a Numeric Value.");
-        if(theEvent.preventDefault) theEvent.preventDefault();
-    }
+function validate() {
+    var self = $(event.target);
+    var scoreVal = self.val();
+    console.log(scoreVal);
+    updateScore();
 }
 
 function playerCount(numChange) {
@@ -55,4 +57,15 @@ function myTimer() {
 
 function myStopFunction() {
     clearInterval(myTime);
+}
+
+function updateScore() {
+
+    var elements = document.getElementsByClassName('hole');
+
+    for(var p = 1; p <= numplayers; p++ ){
+        var playerRow = "<div class='column pc-" + p + "-total'></div>";
+        $("#scoretotal").append(playerRow);
+    }
+
 }
