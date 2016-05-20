@@ -1,9 +1,10 @@
 var numplayers = 6;
 var numholes = 18;
-var holeList = "";
+
 
 function runcode() {
     var titleRow = "<div class='column column-title'><div class='title-players'>Players</div></div>";
+    var holeList = "";
     $("#scorecard").append(titleRow);
     for(var h = 1; h <= numholes; h++) {
         var holeTitle = "<div class='title-hole'>" + h + "</div>";
@@ -43,12 +44,6 @@ function validate(evt) {
 
 function playerCount(numChange) {
     numplayers += numChange;
-    $("#scorecard").empty();
-    runcode();
-}
-
-function holeCount(numChange) {
-    numholes = numChange;
     $("#scorecard").empty();
     runcode();
 }
