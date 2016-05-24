@@ -3,17 +3,12 @@ var numholes = 18;
 var myTime = setInterval(function () { myTimer(), 1000});
 
 var xmlhttp = new XMLHttpRequest();
-var url = "http://golf-courses-api.herokuapp.com/courses/:id";
-
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         var myObj = JSON.parse(xmlhttp.responseText);
-        //myFunction(myArr);
         document.getElementById("weather").innerHTML += myObj.weather[0].description;
     }
 };
-//xmlhttp.open("GET", url, true);
-//xmlhttp.send();
 
 var url2= "http://api.openweathermap.org/data/2.5/weather?id=5780026&appid=20e833c9715665014beb18e4e9f50aa5";
 
@@ -68,9 +63,11 @@ function collectholes(player){
 
 function validate() {
     var self = $(event.target);
-    var scoreVal = self.val();
-    console.log(scoreVal);
-    updateScore();
+    var scoreVal = parseInt(self.val());
+    var selfId = self.parent().attr('id');
+    //console.log(scoreVal);
+    //console.log(selfId);
+    updateScore(selfId, scoreVal);
 }
 
 function playerCount(numChange) {
@@ -88,12 +85,22 @@ function myStopFunction() {
     clearInterval(myTime);
 }
 
-function updateScore() {
+function updateScore(playerID, scoreImp) {
 
-    var elements = document.getElementsByClassName('hole');
+    var theID = playerID.replace( /(^.+\D)(\d+)(\D.+$)/i,'$2');
 
     for(var p = 1; p <= numplayers; p++ ){
         var playerRow = "<div class='column pc-" + p + "-total'></div>";
+        var item = "#player-" + p + "-total";
+
+        if (theID == p) {
+            var scoreUpdating = $(".column-total").find(item);
+            var currentScore = parseInt(scoreUpdating.text());
+
+            currentScore = currentScore + scoreImp;
+            $(scoreUpdating).text(currentScore);
+        }
+
         $("#scoretotal").append(playerRow);
     }
 
