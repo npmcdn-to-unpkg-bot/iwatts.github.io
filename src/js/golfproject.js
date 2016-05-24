@@ -6,7 +6,7 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         var myObj = JSON.parse(xmlhttp.responseText);
-        document.getElementById("weather").innerHTML += myObj.weather[0].description;
+        document.getElementById("weather").innerHTML += " " + myObj.name + ": "+ myObj.weather[0].description;
     }
 };
 
