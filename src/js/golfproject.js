@@ -2,6 +2,35 @@ var numplayers = 6;
 var numholes = 18;
 var myTime = setInterval(function () { myTimer(), 1000});
 
+var xmlhttp = new XMLHttpRequest();
+var url = "http://golf-courses-api.herokuapp.com/courses/:id";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myObj = JSON.parse(xmlhttp.responseText);
+        //myFunction(myArr);
+        document.getElementById("weather").innerHTML += myObj.weather[0].description;
+    }
+};
+//xmlhttp.open("GET", url, true);
+//xmlhttp.send();
+
+var url2= "http://api.openweathermap.org/data/2.5/weather?id=5780026&appid=20e833c9715665014beb18e4e9f50aa5";
+
+xmlhttp.open("GET", url2, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<a href="' + arr[i].url + '">' +
+            arr[i].display + '</a><br>';
+    }
+    //document.getElementById("id01").innerHTML = out;
+    console.log(out);
+}
+
 function runcode() {
     var titleRow = "<div class='column column-title'><div class='title-players'>Players</div></div>";
     var totalRow = "<div class='column-total'><div class='total-score'>Score</div></div>";
