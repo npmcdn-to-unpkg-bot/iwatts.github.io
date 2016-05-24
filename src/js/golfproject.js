@@ -6,7 +6,10 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         var myObj = JSON.parse(xmlhttp.responseText);
-        document.getElementById("weather").innerHTML += " " + myObj.name + ": "+ myObj.weather[0].description;
+        var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+            return letter.toUpperCase();
+        });
+        document.getElementById("weather").innerHTML += " " + myObj.name + ": " + str;
     }
 };
 
