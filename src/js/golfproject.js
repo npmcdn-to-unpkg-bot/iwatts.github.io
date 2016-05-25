@@ -112,11 +112,11 @@ function showPosition(position) {
     myLng = position.coords.longitude;
     console.log(myLat);
     defZoom = 12;
-    initMap();
+    initMap("map");
 }
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
+function initMap(where) {
+    map = new google.maps.Map(document.getElementById(where), {
         center: {lat: myLat, lng: myLng},
         zoom: defZoom
     });
