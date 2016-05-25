@@ -110,6 +110,7 @@ function getLocation() {
 function showPosition(position) {
     myLat = position.coords.latitude;
     myLng = position.coords.longitude;
+    console.log(myLat);
     defZoom = 12;
     initMap();
 }
