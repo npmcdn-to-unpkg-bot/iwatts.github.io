@@ -17,6 +17,7 @@
             height: 100%;
             background-image: url(img/golf-hd-wallpapers-7.jpeg);
             background-position: center;
+            background-size: cover;
             background-color: #000;
             position: absolute;
             -webkit-filter: blur(6px);
@@ -93,7 +94,15 @@
             position: relative;
             z-index: 20;
         }
+        #map {
+            height: 400px;
+            width: 400px;
+            margin: 0 auto;
+        }
     </style>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQTkMOwS6vTab1inz5VIha4SH-YbpQSk0&callback=initMap">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="js/golfproject.js"></script>
 </head>
@@ -115,6 +124,8 @@
     </div>
 
     <div id="scoretotal"></div>
+
+    <div id="map"></div>
 
 </body>
 </html>
