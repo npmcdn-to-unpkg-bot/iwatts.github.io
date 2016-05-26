@@ -21,7 +21,7 @@ function coursesLoaded() {
             console.log(testingC);
         }
 
-        console.log(listCourses);
+        //console.log(listCourses);
         $(".courselist ul").append(listCourses);
     });
 }
@@ -146,6 +146,5 @@ function initMap() {
 }
 getLocation();
 coursesLoaded();
-
 
 

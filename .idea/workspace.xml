@@ -4,7 +4,6 @@
     <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NodeProject/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/golfproject.html" afterPath="$PROJECT_DIR$/src/golfproject.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/golfproject.js" afterPath="$PROJECT_DIR$/src/js/golfproject.js" />
     </list>
     <ignored path="untitled.iws" />
@@ -59,8 +58,8 @@
       <file leaf-file-name="golfproject.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="-1305">
+              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -407,12 +406,12 @@
       <workItem from="1464010528306" duration="474000" />
       <workItem from="1464096156340" duration="7648000" />
       <workItem from="1464183289671" duration="2692000" />
-      <workItem from="1464269396361" duration="3419000" />
+      <workItem from="1464269396361" duration="3756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118322000" />
+    <option name="totallyTimeSpent" value="118659000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,8 +824,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="-1305">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding />
         </state>
       </provider>
