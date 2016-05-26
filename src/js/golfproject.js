@@ -2,11 +2,29 @@ var numplayers = 6;
 var numholes = 18;
 var myTime = setInterval(function () { myTimer(), 1000});
 var map;
-var myLat = 0;
-var myLng = 0;
+var myLat = 40.418855;
+var myLng = -111.887480;
 var defZoom = 1;
 var url2= "http://api.openweathermap.org/data/2.5/weather?id=5780026&appid=20e833c9715665014beb18e4e9f50aa5";
 var xmlhttp = new XMLHttpRequest();
+
+var localObj = {latitude:myLat, longitude:myLng, radius:10};
+var myCourse = {};
+function coursesLoaded() {
+    $.post("http://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
+        myCourse = JSON.parse(data);
+        var listCourses = "";
+
+        for (var gc in myCourse.courses) {
+            listCourses += "<li>" + myCourse.courses[gc].name + "</li>";
+            var testingC = myCourse.courses[gc];
+            console.log(testingC);
+        }
+
+        console.log(listCourses);
+        $(".courselist ul").append(listCourses);
+    });
+}
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -14,7 +32,7 @@ xmlhttp.onreadystatechange = function() {
         var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
             return letter.toUpperCase();
         });
-        document.getElementById("weather").innerHTML += " " + myObj.name + ": " + str;
+        document.getElementById("weather").innerHTML += " " + myObj.name + ":<br>" + str;
     }
 };
 xmlhttp.open("GET", url2, true);
@@ -110,17 +128,15 @@ function getLocation() {
 function showPosition(position) {
     myLat = position.coords.latitude;
     myLng = position.coords.longitude;
-    console.log(myLat);
+    //console.log(myLat);
     defZoom = 12;
-    initMap("map");
 }
 
-function initMap(where) {
-    map = new google.maps.Map(document.getElementById(where), {
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
         center: {lat: myLat, lng: myLng},
         zoom: defZoom
     });
-    smoothZoom(map, defZoom, map.getZoom());
     var image = '../src/img/tee-off.png';
     var teeoff = new google.maps.Marker({
         position: {lat: 40.233, lng: -111.658},
@@ -128,17 +144,8 @@ function initMap(where) {
         icon: image
     });
 }
-function smoothZoom (map, max, cnt) {
-    if (cnt >= max) {
-        return;
-    }
-    else {
-        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
-            google.maps.event.removeListener(z);
-            smoothZoom(map, max, cnt + 1);
-        });
-        setTimeout(function(){map.setZoom(cnt)}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
-    }
-}
 getLocation();
+coursesLoaded();
+
+
 

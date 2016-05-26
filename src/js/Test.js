@@ -82,3 +82,23 @@ var url= "http://api.openweathermap.org/data/2.5/weather?id=5780026&appid=20e833
 
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
+
+function numCheck(x) {
+    if (x >= 1 && x <= 20) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+console.log(numCheck(2));
+
+function stringCheck(s) {
+    if (s.length == 5) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+console.log(stringCheck("isaac"));
