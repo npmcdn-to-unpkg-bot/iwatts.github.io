@@ -5,7 +5,7 @@ var map;
 var myLat = 40.418855;
 var myLng = -111.887480;
 var defZoom = 1;
-var url2= "http://api.openweathermap.org/data/2.5/weather?id=5780026&appid=20e833c9715665014beb18e4e9f50aa5";
+var url2= "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
 var xmlhttp = new XMLHttpRequest();
 
 var localObj = {latitude:myLat, longitude:myLng, radius:10};
@@ -40,21 +40,24 @@ function courseSelect(id) {
     xmlhttp.send();
     defZoom = 14;
     initMap();
+    url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
+    console.log(url2);
+    weatherDisplay();
 }
 
-
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var myObj = JSON.parse(xmlhttp.responseText);
-        var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-            return letter.toUpperCase();
-        });
-        document.getElementById("weather").innerHTML += " " + myObj.name + ":<br>" + str;
-    }
-};
-xmlhttp.open("GET", url2, true);
-xmlhttp.send();
-
+function weatherDisplay() {
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var myObj = JSON.parse(xmlhttp.responseText);
+            var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+                return letter.toUpperCase();
+            });
+            document.getElementById("weather").innerHTML = "Weather Conditions in " + myObj.name + ":<br>" + str;
+        }
+    };
+    xmlhttp.open("GET", url2, true);
+    xmlhttp.send();
+}
 
 function runcode() {
     getLocation();
