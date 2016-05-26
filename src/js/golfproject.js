@@ -10,21 +10,38 @@ var xmlhttp = new XMLHttpRequest();
 
 var localObj = {latitude:myLat, longitude:myLng, radius:10};
 var myCourse = {};
+
 function coursesLoaded() {
     $.post("http://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
         myCourse = JSON.parse(data);
         var listCourses = "";
 
         for (var gc in myCourse.courses) {
-            listCourses += "<li>" + myCourse.courses[gc].name + "</li>";
+            listCourses += "<li onclick='courseSelect(" + myCourse.courses[gc].id + ")'>" + myCourse.courses[gc].name + "</li>";
             var testingC = myCourse.courses[gc];
-            console.log(testingC);
+            //console.log(testingC);
         }
 
         //console.log(listCourses);
         $(".courselist ul").append(listCourses);
     });
 }
+function courseSelect(id) {
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var myCourseSelection = JSON.parse(xmlhttp.responseText);
+            myLat = myCourseSelection.course.location.lat;
+            myLng = myCourseSelection.course.location.lng;
+            console.log(myCourseSelection);
+
+        }
+    };
+    xmlhttp.open("GET", "http://golf-courses-api.herokuapp.com/courses/"+ id, true);
+    xmlhttp.send();
+    defZoom = 14;
+    initMap();
+}
+
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -40,6 +57,7 @@ xmlhttp.send();
 
 
 function runcode() {
+    getLocation();
     var titleRow = "<div class='column column-title'><div class='title-players'>Players</div></div>";
     var totalRow = "<div class='column-total'><div class='total-score'>Score</div></div>";
     var holeList = "";
@@ -144,7 +162,7 @@ function initMap() {
         icon: image
     });
 }
-getLocation();
+
 coursesLoaded();
 
 
