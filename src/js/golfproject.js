@@ -56,7 +56,7 @@ function courseSelect(courseID) {
     courseLng = myCourseSelection.location.lng;
 
     //SHOW WEATHER IN SELECTED AREA
-    url2 = "https://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
+    url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
     weatherDisplay();
 
     runcode();
