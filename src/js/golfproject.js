@@ -151,6 +151,7 @@ function showPosition(position) {
     myLng = position.coords.longitude;
     //console.log(myLat);
     defZoom = 12;
+    coursesLoaded();
 }
 
 function initMap() {
@@ -165,7 +166,3 @@ function initMap() {
         icon: image
     });
 }
-
-coursesLoaded();
-
-
