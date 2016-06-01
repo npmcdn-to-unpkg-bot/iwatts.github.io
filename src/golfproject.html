@@ -115,6 +115,9 @@
             float: right;
             padding: 0px 20px;
         }
+        .loading {
+            width:20px;
+        }
     </style>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQTkMOwS6vTab1inz5VIha4SH-YbpQSk0&callback=initMap">
@@ -129,7 +132,9 @@
 
         <div class="courselist">
             Select a Course Near you:
-            <ul></ul>
+            <ul>
+                <img class="loading" src="img/LoadingBasketContents.gif">
+            </ul>
         </div>
         <div class="leftmenu">
             <p id="demo"></p>

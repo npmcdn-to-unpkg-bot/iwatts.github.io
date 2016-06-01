@@ -1,11 +1,18 @@
+$( document ).ready(function() {
+    runcode();
+});
+
 var numplayers = 6;
 var numholes = 18;
 var myTime = setInterval(function () { myTimer(), 1000});
 
 var map;
 
-var myLat = 40.418855;
-var myLng = -111.887480;
+var myLat;
+var myLng;
+var courseLat = 0;
+var courseLng = 0;
+
 var defZoom = 1;
 
 var url2= "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
@@ -21,8 +28,8 @@ function coursesLoaded() {
 
         for (var gc in myCourse.courses) {
             listCourses += "<li onclick='courseSelect(" + myCourse.courses[gc].id + ")'>" + myCourse.courses[gc].name + "</li>";
-            var testingC = myCourse.courses[gc];
-            console.log(testingC);
+            //var testingC = myCourse.courses[gc];
+            //console.log(testingC);
             numholes = myCourse.courses[gc].hole_count;
         }
 
@@ -30,25 +37,35 @@ function coursesLoaded() {
         $(".courselist ul").html(listCourses);
     });
 }
-function courseSelect(id) {
-    xmlhttp.onreadystatechange = function() {
+function filterById(jsonObject, id) {
+    return jsonObject.filter(function(jsonObject) {
+        return (jsonObject['id'] == id);
+    })[0];
+}
+function courseSelect(courseID) {
+    /*xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var myCourseSelection = JSON.parse(xmlhttp.responseText);
-            myLat = myCourseSelection.course.location.lat;
-            myLng = myCourseSelection.course.location.lng;
+            courseLat = myCourseSelection.course.location.lat;
+            courseLng = myCourseSelection.course.location.lng;
             console.log(myCourseSelection);
-
         }
     };
-    xmlhttp.open("GET", "http://golf-courses-api.herokuapp.com/courses/"+ id, true);
-    xmlhttp.send();
+    xmlhttp.open("GET", "http://golf-courses-api.herokuapp.com/courses/"+ courseID, true);
+    xmlhttp.send();*/
+
+    var myCourseSelection = filterById(myCourse['courses'], courseID);
+    courseLat = myCourseSelection.location.lat;
+    courseLng = myCourseSelection.location.lng;
+
     defZoom = 14;
-    initMap();
     url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
-    //console.log(url2);
+    
     weatherDisplay();
     runcode();
+
     $("#map").css("display", "block");
+    initMap();
 }
 
 function weatherDisplay() {
@@ -146,7 +163,7 @@ function updateScore(playerID, scoreImp) {
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition, positionError);
     } else {
         alert("Geolocation is not supported by this browser.");
     }
@@ -155,18 +172,21 @@ function getLocation() {
 function showPosition(position) {
     myLat = position.coords.latitude;
     myLng = position.coords.longitude;
-    defZoom = 12;
+    localObj = {latitude:myLat, longitude:myLng, radius:10};
     coursesLoaded();
+}
+function positionError() {
+    alert('Location cannot be found!');
 }
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-        center: {lat: myLat, lng: myLng},
+        center: {lat: courseLat, lng: courseLng},
         zoom: defZoom
     });
     var image = '../src/img/tee-off.png';
     var teeoff = new google.maps.Marker({
-        position: {lat: myLat, lng: myLng},
+        position: {lat: courseLat, lng: courseLng},
         map: map,
         icon: image
     });
