@@ -22,18 +22,16 @@ var localObj = {latitude:myLat, longitude:myLng, radius:10};
 var myCourse = {};
 
 function coursesLoaded() {
+    /******* LOOP THROUGH LOCAL COURSES, RUN AFTER GETTING LOCATION FROM USER *******/
     $.post("http://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
         myCourse = JSON.parse(data);
         var listCourses = "";
 
         for (var gc in myCourse.courses) {
             listCourses += "<li onclick='courseSelect(" + myCourse.courses[gc].id + ")'>" + myCourse.courses[gc].name + "</li>";
-            //var testingC = myCourse.courses[gc];
-            //console.log(testingC);
             numholes = myCourse.courses[gc].hole_count;
         }
-
-        //console.log(listCourses);
+        /*******OVERWRITE LOADING GIF TO SHOW SELECTION *******/
         $(".courselist ul").html(listCourses);
     });
 }
@@ -54,16 +52,19 @@ function courseSelect(courseID) {
     xmlhttp.open("GET", "http://golf-courses-api.herokuapp.com/courses/"+ courseID, true);
     xmlhttp.send();*/
 
+    //SET COURSE VARS TO DISPLAY BASED ON SELECTION
     var myCourseSelection = filterById(myCourse['courses'], courseID);
     courseLat = myCourseSelection.location.lat;
     courseLng = myCourseSelection.location.lng;
 
-    defZoom = 14;
-    url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
-    
+    //SHOW WEATHER IN SELECTED AREA
+    url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
     weatherDisplay();
+
     runcode();
 
+    // SHOW MAP AND COURSE LOCATION
+    defZoom = 14;
     $("#map").css("display", "block");
     initMap();
 }
@@ -84,6 +85,7 @@ function weatherDisplay() {
 
 function runcode() {
     getLocation();
+    /********* DISPLAY THE SCORECARD **********/
     var titleRow = "<div class='column column-title'><div class='title-players'>Players</div></div>";
     var totalRow = "<div class='column-total'><div class='total-score'>Score</div></div>";
     var holeList = "";
@@ -121,6 +123,7 @@ function collectholes(player){
 function validate() {
     var self = $(event.target);
     var scoreVal = parseInt(self.val());
+    if
     var selfId = self.parent().attr('id');
     updateScore(selfId, scoreVal);
 }
