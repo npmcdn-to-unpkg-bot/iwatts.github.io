@@ -14,8 +14,6 @@ var courseLat = 0;
 var courseLng = 0;
 
 var defZoom = 1;
-
-var url2= "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
 var xmlhttp = new XMLHttpRequest();
 
 var localObj = {latitude:myLat, longitude:myLng, radius:10};
@@ -23,7 +21,7 @@ var myCourse = {};
 
 function coursesLoaded() {
     /******* LOOP THROUGH LOCAL COURSES, RUN AFTER GETTING LOCATION FROM USER *******/
-    $.post("http://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
+    $.post("https://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
         myCourse = JSON.parse(data);
         var listCourses = "";
 
@@ -58,7 +56,7 @@ function courseSelect(courseID) {
     courseLng = myCourseSelection.location.lng;
 
     //SHOW WEATHER IN SELECTED AREA
-    url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
+    url2 = "https://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
     weatherDisplay();
 
     runcode();
