@@ -46,21 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="golfproject.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="golfproject.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/golfproject.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="330">
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="golfproject.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="golfproject.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state relative-caret-position="426">
+              <caret line="167" column="41" selection-start-line="167" selection-start-column="41" selection-end-line="167" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -138,8 +138,8 @@
         <option value="$PROJECT_DIR$/src/js/weather.json" />
         <option value="$PROJECT_DIR$/src/js/Test.js" />
         <option value="$PROJECT_DIR$/src/js/test.js" />
-        <option value="$PROJECT_DIR$/src/js/golfproject.js" />
         <option value="$PROJECT_DIR$/src/golfproject.html" />
+        <option value="$PROJECT_DIR$/src/js/golfproject.js" />
       </list>
     </option>
   </component>
@@ -408,12 +408,12 @@
       <workItem from="1464096156340" duration="7648000" />
       <workItem from="1464183289671" duration="2692000" />
       <workItem from="1464269396361" duration="5890000" />
-      <workItem from="1464787268780" duration="986000" />
+      <workItem from="1464787268780" duration="1229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121779000" />
+    <option name="totallyTimeSpent" value="122022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,14 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -826,8 +818,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/golfproject.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state relative-caret-position="330">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="167" column="41" selection-start-line="167" selection-start-column="41" selection-end-line="167" selection-end-column="41" />
           <folding />
         </state>
       </provider>

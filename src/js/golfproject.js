@@ -154,7 +154,6 @@ function getLocation() {
 function showPosition(position) {
     myLat = position.coords.latitude;
     myLng = position.coords.longitude;
-    //console.log(myLat);
     defZoom = 12;
     coursesLoaded();
 }
@@ -166,7 +165,7 @@ function initMap() {
     });
     var image = '../src/img/tee-off.png';
     var teeoff = new google.maps.Marker({
-        position: {lat: 40.233, lng: -111.658},
+        position: {lat: myLat, lng: myLng},
         map: map,
         icon: image
     });
