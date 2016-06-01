@@ -123,9 +123,14 @@ function collectholes(player){
 function validate() {
     var self = $(event.target);
     var scoreVal = parseInt(self.val());
-    if
     var selfId = self.parent().attr('id');
-    updateScore(selfId, scoreVal);
+    if(isNaN(scoreVal)){
+        alert("Please enter a number");
+        self.val("");
+    } else {
+        updateScore(selfId, scoreVal);
+    }
+
 }
 
 function playerCount(numChange) {
