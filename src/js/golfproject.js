@@ -48,6 +48,7 @@ function courseSelect(id) {
     //console.log(url2);
     weatherDisplay();
     runcode();
+    $("#map").css("display", "block");
 }
 
 function weatherDisplay() {
