@@ -1,10 +1,13 @@
 var numplayers = 6;
 var numholes = 18;
 var myTime = setInterval(function () { myTimer(), 1000});
+
 var map;
+
 var myLat = 40.418855;
 var myLng = -111.887480;
 var defZoom = 1;
+
 var url2= "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
 var xmlhttp = new XMLHttpRequest();
 
@@ -19,11 +22,12 @@ function coursesLoaded() {
         for (var gc in myCourse.courses) {
             listCourses += "<li onclick='courseSelect(" + myCourse.courses[gc].id + ")'>" + myCourse.courses[gc].name + "</li>";
             var testingC = myCourse.courses[gc];
-            //console.log(testingC);
+            console.log(testingC);
+            numholes = myCourse.courses[gc].hole_count;
         }
 
         //console.log(listCourses);
-        $(".courselist ul").append(listCourses);
+        $(".courselist ul").html(listCourses);
     });
 }
 function courseSelect(id) {
@@ -41,8 +45,9 @@ function courseSelect(id) {
     defZoom = 14;
     initMap();
     url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + myLat + "&lon=" + myLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
-    console.log(url2);
+    //console.log(url2);
     weatherDisplay();
+    runcode();
 }
 
 function weatherDisplay() {
@@ -66,7 +71,7 @@ function runcode() {
     var holeList = "";
     var scoreTotals = "";
 
-    $("#scorecard").append(titleRow);
+    $("#scorecard").html(titleRow);
     for(var h = 1; h <= numholes; h++) {
         var holeTitle = "<div class='title-hole'>" + h + "</div>";
         holeList += holeTitle;
