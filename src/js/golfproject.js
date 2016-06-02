@@ -21,7 +21,7 @@ var myCourse = {};
 
 function coursesLoaded() {
     /******* LOOP THROUGH LOCAL COURSES, RUN AFTER GETTING LOCATION FROM USER *******/
-    $.post("https://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
+    $.post("http://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
         myCourse = JSON.parse(data);
         var listCourses = "";
 
