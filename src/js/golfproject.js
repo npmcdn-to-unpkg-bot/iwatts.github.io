@@ -56,8 +56,8 @@ function courseSelect(courseID) {
     courseLng = myCourseSelection.location.lng;
 
     //SHOW WEATHER IN SELECTED AREA
-    //url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
-    url2 = "https://api.forecast.io/forecast/33d39e303ac37560718b985b25f01270/" + courseLat + ", " + courseLng;
+    url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
+    //url2 = "https://api.forecast.io/forecast/33d39e303ac37560718b985b25f01270/" + courseLat + ", " + courseLng;
 	weatherDisplay();
 
     runcode();
@@ -72,9 +72,9 @@ function weatherDisplay() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var myObj = JSON.parse(xmlhttp.responseText);
-            /*var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+            var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
                 return letter.toUpperCase();
-            });*/
+            });
 			console.log(myObj);
             document.getElementById("weather").innerHTML = "Weather Conditions in " + myObj.name + ":<br>" + str;
         }
