@@ -42,7 +42,6 @@ function filterById(jsonObject, id) {
 }
 
 function courseSelect(courseID) {
-    var courseInf;
     var myCourseSelection = filterById(myCourse['courses'], courseID);
     console.log(myCourseSelection.href);
 
@@ -59,13 +58,16 @@ function courseSelect(courseID) {
                     parTotal = parTotal + val;
                 }
             });
-            console.log(parTotal);
+            //console.log(parTotal);
         }
         var parTitle = "<div id='par-title'>Par</div>";
         var parTotalScore = "<div id='par-totla'>" + parTotal + "</div>";
-        $("#courseinf").html(parTitle);
-        $("#courseinf").append(items);
-        $("#courseinf").append(parTotalScore);
+        
+        var self = $("#courseinf");
+
+        self.html(parTitle);
+        self.append(items);
+        self.append(parTotalScore);
 
     });
 
