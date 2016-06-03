@@ -61,7 +61,7 @@ function courseSelect(courseID) {
             //console.log(parTotal);
         }
         var parTitle = "<div id='par-title'>Par</div>";
-        var parTotalScore = "<div id='par-totla'>" + parTotal + "</div>";
+        var parTotalScore = "<div id='par-total'>" + parTotal + "</div>";
         
         var self = $("#courseinf");
 
