@@ -43,7 +43,7 @@ function filterById(jsonObject, id) {
 
 function courseSelect(courseID) {
     var myCourseSelection = filterById(myCourse['courses'], courseID);
-    console.log(myCourseSelection.href);
+    //console.log(myCourseSelection.href);
 
     $.getJSON( myCourseSelection.href, function( data ) {
         var items = "";
