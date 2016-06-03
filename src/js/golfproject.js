@@ -19,8 +19,9 @@ var xmlhttp = new XMLHttpRequest();
 var localObj = {latitude:myLat, longitude:myLng, radius:10};
 var myCourse = {};
 
+
 function coursesLoaded() {
-    /******* LOOP THROUGH LOCAL COURSES, RUN AFTER GETTING LOCATION FROM USER *******/
+    /*      LOOP THROUGH LOCAL COURSES, RUN AFTER GETTING LOCATION FROM USER        */
     $.post("https://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
         myCourse = JSON.parse(data);
         var listCourses = "";
@@ -29,53 +30,79 @@ function coursesLoaded() {
             listCourses += "<li onclick='courseSelect(" + myCourse.courses[gc].id + ")'>" + myCourse.courses[gc].name + "</li>";
             numholes = myCourse.courses[gc].hole_count;
         }
-        /*******OVERWRITE LOADING GIF TO SHOW SELECTION *******/
+        /*      OVERWRITE LOADING GIF TO SHOW SELECTION         */
         $(".courselist ul").html(listCourses);
     });
 }
+
 function filterById(jsonObject, id) {
     return jsonObject.filter(function(jsonObject) {
         return (jsonObject['id'] == id);
     })[0];
 }
+
 function courseSelect(courseID) {
+    var courseInf;
+    var myCourseSelection = filterById(myCourse['courses'], courseID);
+    console.log(myCourseSelection.href);
+
+    $.getJSON( myCourseSelection.href, function( data ) {
+        var items = "";
+        var hcntr = 1;
+        var parTotal = 0;
+
+        for (var nh in data.course.holes) {
+            $.each(data.course.holes[nh].tee_boxes[0], function (key, val) {
+                if (key == "par") {
+                    items += "<div id='" + key + "_hole_" + hcntr + "'>" + val + "</div>";
+                    hcntr++;
+                    parTotal = parTotal + val;
+                }
+            });
+            console.log(parTotal);
+        }
+        var parTitle = "<div id='par-title'>Par</div>";
+        var parTotalScore = "<div id='par-totla'>" + parTotal + "</div>";
+        $("#courseinf").html(parTitle);
+        $("#courseinf").append(items);
+        $("#courseinf").append(parTotalScore);
+
+    });
+
     /*xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var myCourseSelection = JSON.parse(xmlhttp.responseText);
-            courseLat = myCourseSelection.course.location.lat;
-            courseLng = myCourseSelection.course.location.lng;
-            console.log(myCourseSelection);
+            courseSingle = JSON.parse(xmlhttp.responseText);
+            var courseInf = filterById(courseSingle['course'], holes);
+            console.log(courseInf);
         }
     };
-    xmlhttp.open("GET", "http://golf-courses-api.herokuapp.com/courses/"+ courseID, true);
+    xmlhttp.open("GET", myCourseSelection.href, true);
     xmlhttp.send();*/
 
     //SET COURSE VARS TO DISPLAY BASED ON SELECTION
-    var myCourseSelection = filterById(myCourse['courses'], courseID);
     courseLat = myCourseSelection.location.lat;
     courseLng = myCourseSelection.location.lng;
 
     //SHOW WEATHER IN SELECTED AREA
-    url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
-    //url2 = "https://api.forecast.io/forecast/33d39e303ac37560718b985b25f01270/" + courseLat + ", " + courseLng;
-	weatherDisplay();
+    var url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
 
-    runcode();
+    weatherDisplay(url2);
+
 
     // SHOW MAP AND COURSE LOCATION
     defZoom = 14;
     $("#map").css("display", "block");
     initMap();
+    runcode();
 }
 
-function weatherDisplay() {
+function weatherDisplay(url2) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var myObj = JSON.parse(xmlhttp.responseText);
             var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
                 return letter.toUpperCase();
             });
-			console.log(myObj);
             document.getElementById("weather").innerHTML = "Weather Conditions in " + myObj.name + ":<br>" + str;
         }
     };
@@ -90,6 +117,7 @@ function runcode() {
     var totalRow = "<div class='column-total'><div class='total-score'>Score</div></div>";
     var holeList = "";
     var scoreTotals = "";
+
 
     $("#scorecard").html(titleRow);
     for(var h = 1; h <= numholes; h++) {
@@ -106,6 +134,9 @@ function runcode() {
     }
     $("#scorecard").append(totalRow);
     $("#scorecard .column-total").append(scoreTotals);
+
+    var winHeight = $(document).height();
+    $(".mask").css("height", winHeight + "px");
 }
 
 function collectholes(player){
@@ -138,6 +169,7 @@ function playerCount(numChange) {
     $("#scorecard").empty();
     runcode();
 }
+
 function myTimer() {
     var d = new Date();
     var t = d.toLocaleTimeString();
@@ -183,6 +215,7 @@ function showPosition(position) {
     localObj = {latitude:myLat, longitude:myLng, radius:10};
     coursesLoaded();
 }
+
 function positionError() {
     alert('Location cannot be found!');
 }
