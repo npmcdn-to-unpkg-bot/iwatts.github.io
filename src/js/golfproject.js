@@ -214,7 +214,7 @@ function getLocation() {
 function showPosition(position) {
     myLat = position.coords.latitude;
     myLng = position.coords.longitude;
-    localObj = {latitude:myLat, longitude:myLng, radius:10};
+    localObj = {latitude:myLat, longitude:myLng, radius:20};
     coursesLoaded();
 }
 
