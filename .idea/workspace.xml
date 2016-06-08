@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NodeProject/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/LinkedList-test.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/SpecRunner.html" afterPath="$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/SpecRunner.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/golfproject.js" afterPath="$PROJECT_DIR$/src/js/golfproject.js" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +35,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linked-list.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="golfproject.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linked-list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/linked-list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="408">
               <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
               <folding>
                 <element signature="n#!!doc;n#LinkedList#0" expanded="false" />
@@ -113,12 +122,12 @@
         <option value="$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/golfspec.js" />
         <option value="$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/stack-test.js" />
         <option value="$PROJECT_DIR$/src/js/stack.js" />
-        <option value="$PROJECT_DIR$/src/js/golfproject.js" />
         <option value="$PROJECT_DIR$/src/queue.html" />
         <option value="$PROJECT_DIR$/src/golfproject.html" />
         <option value="$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/LinkedList-test.js" />
         <option value="$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/SpecRunner.html" />
         <option value="$PROJECT_DIR$/src/js/linked-list.js" />
+        <option value="$PROJECT_DIR$/src/js/golfproject.js" />
       </list>
     </option>
   </component>
@@ -166,6 +175,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -258,8 +269,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,12 +442,13 @@
       <workItem from="1464960645327" duration="1050000" />
       <workItem from="1464961849709" duration="8154000" />
       <workItem from="1465219784963" duration="3732000" />
-      <workItem from="1465306858822" duration="4088000" />
+      <workItem from="1465306858822" duration="4574000" />
+      <workItem from="1465392856029" duration="1325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153423000" />
+    <option name="totallyTimeSpent" value="155234000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -799,19 +809,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/LinkedList-test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/LinkedList-test" />
     <entry file="file://$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/stack-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,15 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,6 +832,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/linked-list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc;n#LinkedList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jamsine/jasmine-standalone-2.4.1/spec/LinkedList-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -847,13 +850,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/linked-list.js">
+    <entry file="file://$PROJECT_DIR$/src/js/golfproject.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc;n#LinkedList#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

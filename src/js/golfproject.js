@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    runcode();
+    runcode(numholes);
 });
 
 var numplayers = 6;
@@ -28,7 +28,6 @@ function coursesLoaded() {
 
         for (var gc in myCourse.courses) {
             listCourses += "<li onclick='courseSelect(" + myCourse.courses[gc].id + ")'>" + myCourse.courses[gc].name + "</li>";
-            numholes = myCourse.courses[gc].hole_count;
         }
         /*      OVERWRITE LOADING GIF TO SHOW SELECTION         */
         $(".courselist ul").html(listCourses);
@@ -49,6 +48,7 @@ function courseSelect(courseID) {
         var items = "";
         var hcntr = 1;
         var parTotal = 0;
+        numholes = data.course.hole_count;
 
         for (var nh in data.course.holes) {
             $.each(data.course.holes[nh].tee_boxes[0], function (key, val) {
@@ -58,11 +58,11 @@ function courseSelect(courseID) {
                     parTotal = parTotal + val;
                 }
             });
-            //console.log(parTotal);
         }
+        console.log(numholes);
         var parTitle = "<div id='par-title'>Par</div>";
         var parTotalScore = "<div id='par-total'>" + parTotal + "</div>";
-        
+
         var self = $("#courseinf");
 
         self.html(parTitle);
@@ -70,16 +70,6 @@ function courseSelect(courseID) {
         self.append(parTotalScore);
 
     });
-
-    /*xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            courseSingle = JSON.parse(xmlhttp.responseText);
-            var courseInf = filterById(courseSingle['course'], holes);
-            console.log(courseInf);
-        }
-    };
-    xmlhttp.open("GET", myCourseSelection.href, true);
-    xmlhttp.send();*/
 
     //SET COURSE VARS TO DISPLAY BASED ON SELECTION
     courseLat = myCourseSelection.location.lat;
@@ -95,7 +85,7 @@ function courseSelect(courseID) {
     defZoom = 14;
     $("#map").css("display", "block");
     initMap();
-    runcode();
+    setTimeout(runcode, 200);
 }
 
 function weatherDisplay(url2) {
