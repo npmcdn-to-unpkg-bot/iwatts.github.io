@@ -42,7 +42,6 @@ function filterById(jsonObject, id) {
 
 function courseSelect(courseID) {
     var myCourseSelection = filterById(myCourse['courses'], courseID);
-    //console.log(myCourseSelection.href);
 
     $.getJSON( myCourseSelection.href, function( data ) {
         var items = "";
@@ -85,7 +84,7 @@ function courseSelect(courseID) {
     defZoom = 14;
     $("#map").css("display", "block");
     initMap();
-    setTimeout(runcode, 200);
+    setTimeout(runcode, 300);
 }
 
 function weatherDisplay(url2) {
@@ -134,7 +133,7 @@ function runcode() {
 function collectholes(player){
     var golfcourse = "";
     for(var h = 1; h <= numholes; h++){
-        var hole = "<div class='singlehole' id='player" + player +"hole" + h +"'><input onchange='validate()' type='text' value=''></div>";
+        var hole = "<div class='singlehole' id='player" + player + "hole" + h + "'><input onchange='validate()' type='text' value=''></div>";
         golfcourse += hole;
         var apTo = ".pc-" + player;
 
@@ -160,16 +159,6 @@ function playerCount(numChange) {
     numplayers += numChange;
     $("#scorecard").empty();
     runcode();
-}
-
-function myTimer() {
-    var d = new Date();
-    var t = d.toLocaleTimeString();
-    document.getElementById("demo").innerHTML = t;
-}
-
-function myStopFunction() {
-    clearInterval(myTime);
 }
 
 function updateScore(playerID, scoreImp) {
@@ -223,4 +212,15 @@ function initMap() {
         map: map,
         icon: image
     });
+}
+
+
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = t;
+}
+
+function myStopFunction() {
+    clearInterval(myTime);
 }
