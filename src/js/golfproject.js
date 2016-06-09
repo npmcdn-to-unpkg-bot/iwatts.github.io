@@ -2,6 +2,8 @@ $( document ).ready(function() {
     runcode(numholes);
 });
 
+// SET GLOBAL VAR
+
 var numplayers = 6;
 var numholes = 18;
 var myTime = setInterval(function () { myTimer(), 1000});
@@ -21,16 +23,21 @@ var myCourse = {};
 
 
 function coursesLoaded() {
-    /*      LOOP THROUGH LOCAL COURSES, RUN AFTER GETTING LOCATION FROM USER        */
+
+    //LOOP THROUGH LOCAL COURSES, RUN AFTER GETTING LOCATION FROM USER
+
     $.post("https://golf-courses-api.herokuapp.com/courses",localObj, function(data,status) {
         myCourse = JSON.parse(data);
-        var listCourses = "";
+        var listCourses = "<option disabled selected>Select A Course</option>";
 
         for (var gc in myCourse.courses) {
-            listCourses += "<li onclick='courseSelect(" + myCourse.courses[gc].id + ")'>" + myCourse.courses[gc].name + "</li>";
+            listCourses += "<option value='" + myCourse.courses[gc].id + "'>" + myCourse.courses[gc].name + "</option>";
         }
-        /*      OVERWRITE LOADING GIF TO SHOW SELECTION         */
-        $(".courselist ul").html(listCourses);
+
+        //OVERWRITE LOADING GIF TO SHOW SELECTION
+
+        $(".courselist #courses").html(listCourses);
+
     });
 }
 
@@ -42,6 +49,8 @@ function filterById(jsonObject, id) {
 
 function courseSelect(courseID) {
     var myCourseSelection = filterById(myCourse['courses'], courseID);
+
+    $(".c-title").html(myCourseSelection.name);
 
     $.getJSON( myCourseSelection.href, function( data ) {
         var items = "";
@@ -71,19 +80,25 @@ function courseSelect(courseID) {
     });
 
     //SET COURSE VARS TO DISPLAY BASED ON SELECTION
+
     courseLat = myCourseSelection.location.lat;
     courseLng = myCourseSelection.location.lng;
 
     //SHOW WEATHER IN SELECTED AREA
+
     var url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
 
     weatherDisplay(url2);
 
 
     // SHOW MAP AND COURSE LOCATION
+
     defZoom = 14;
     $("#map").css("display", "block");
     initMap();
+
+    // DELAY CARD SO NUMHOLES CAN UPDATE -  FIX WHEN YOU CAN DUMMY
+
     setTimeout(runcode, 300);
 }
 
@@ -103,7 +118,9 @@ function weatherDisplay(url2) {
 
 function runcode() {
     getLocation();
-    /********* DISPLAY THE SCORECARD **********/
+
+    // DISPLAY THE SCORECARD
+
     var titleRow = "<div class='column column-title'><div class='title-players'>Players</div></div>";
     var totalRow = "<div class='column-total'><div class='total-score'>Score</div></div>";
     var holeList = "";

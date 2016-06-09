@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Golf Sheet</title>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <style>
         body {
             text-align: center;
@@ -12,6 +13,9 @@
         input {
             padding: 3px 0px;
 			max-width: 129px;
+        }
+        .clear {
+            clear: both;
         }
         .mask {
             width: 100%;
@@ -120,11 +124,8 @@
             margin: 0 auto;
             display: none;
         }
-        .courselist ul li {
-            list-style: none;
+        .courselist div {
             display: inline-block;
-            margin: 10px 10px;
-            cursor: pointer;
         }
         .leftmenu {
             float: left;
@@ -134,8 +135,10 @@
             float: right;
             padding: 0px 20px;
         }
-        .loading {
-            width:20px;
+        .c-title {
+            font-family: 'Lobster', cursive;
+            font-size: 40px;
+            text-shadow: -4px 0 #000, 0 4px #000, 4px 0 #000, 0 -4px #000;
         }
     </style>
     <script async defer
@@ -150,10 +153,18 @@
     <div class="course-menu">
 
         <div class="courselist">
-            Select a Course Near you:
-            <ul>
-                <img class="loading" src="img/LoadingBasketContents.gif">
-            </ul>
+            <div>
+                Course:
+                <select id="courses" onchange="courseSelect(this.value)">
+                    <option disabled selected>loading...</option>
+                </select>
+            </div>
+            <div>
+                Level:
+                <select id="level" onchange="">
+                    <option disabled selected>loading...</option>
+                </select>
+            </div>
         </div>
         <div class="leftmenu">
             <p id="demo"></p>
@@ -161,6 +172,10 @@
         </div>
         <div class="rightmenu">
             <!--<p id="weather">Weather Conditions in</p>-->
+        </div>
+        <div class="clear"></div>
+        <div class="centermenu">
+            <div class="c-title"></div>
         </div>
 
     </div>
