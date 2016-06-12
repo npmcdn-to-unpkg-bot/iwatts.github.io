@@ -60,6 +60,7 @@ function courseSelect(courseID) {
 
         for (var nh in data.course.holes) {
             $.each(data.course.holes[nh].tee_boxes[0], function (key, val) {
+                console.log(data.course.holes[nh].tee_boxes[0]);
                 if (key == "par") {
                     items += "<div id='" + key + "_hole_" + hcntr + "'>" + val + "</div>";
                     hcntr++;
@@ -67,7 +68,7 @@ function courseSelect(courseID) {
                 }
             });
         }
-        console.log(numholes);
+
         var parTitle = "<div id='par-title'>Par</div>";
         var parTotalScore = "<div id='par-total'>" + parTotal + "</div>";
 
@@ -109,7 +110,7 @@ function weatherDisplay(url2) {
             var str = myObj.weather[0].description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
                 return letter.toUpperCase();
             });
-            document.getElementById("weather").innerHTML = "Weather Conditions in " + myObj.name + ":<br>" + str;
+           $("#weather").html("Weather Conditions in " + myObj.name + ":<br>" + str);
         }
     };
     xmlhttp.open("GET", url2, true);
