@@ -20,6 +20,11 @@ var xmlhttp = new XMLHttpRequest();
 
 var localObj = {latitude:myLat, longitude:myLng, radius:10};
 var myCourse = {};
+var myCourseSelection = {};
+
+var items = "";
+var yards = "";
+var choosenCourse = "";
 
 
 function coursesLoaded() {
@@ -48,36 +53,22 @@ function filterById(jsonObject, id) {
 }
 
 function courseSelect(courseID) {
-    var myCourseSelection = filterById(myCourse['courses'], courseID);
+    myCourseSelection = filterById(myCourse['courses'], courseID);
+    choosenCourse = myCourseSelection.href;
 
     $(".c-title").html(myCourseSelection.name);
 
     $.getJSON( myCourseSelection.href, function( data ) {
-        var items = "";
-        var hcntr = 1;
-        var parTotal = 0;
         numholes = data.course.hole_count;
 
-        for (var nh in data.course.holes) {
-            $.each(data.course.holes[nh].tee_boxes[0], function (key, val) {
-                console.log(data.course.holes[nh].tee_boxes[0]);
-                if (key == "par") {
-                    items += "<div id='" + key + "_hole_" + hcntr + "'>" + val + "</div>";
-                    hcntr++;
-                    parTotal = parTotal + val;
-                }
-            });
+        var listLevels = "<option disabled selected>Select A Level</option>";
+
+        for (var gc in data.course.tee_types) {
+            levelName = data.course.tee_types[gc].tee_type;
+            levelName.toUpperCase();
+            listLevels += "<option value='" + data.course.tee_types[gc].tee_type + "'>" + levelName + "</option>";
         }
-
-        var parTitle = "<div id='par-title'>Par</div>";
-        var parTotalScore = "<div id='par-total'>" + parTotal + "</div>";
-
-        var self = $("#courseinf");
-
-        self.html(parTitle);
-        self.append(items);
-        self.append(parTotalScore);
-
+        $(".courselist #level").html(listLevels);
     });
 
     //SET COURSE VARS TO DISPLAY BASED ON SELECTION
@@ -87,9 +78,8 @@ function courseSelect(courseID) {
 
     //SHOW WEATHER IN SELECTED AREA
 
-    var url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
-
-    weatherDisplay(url2);
+    /*var url2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + courseLat + "&lon=" + courseLng + "&appid=20e833c9715665014beb18e4e9f50aa5";
+    weatherDisplay(url2);*/
 
 
     // SHOW MAP AND COURSE LOCATION
@@ -97,6 +87,55 @@ function courseSelect(courseID) {
     defZoom = 14;
     $("#map").css("display", "block");
     initMap();
+}
+
+function getObjects(obj, key, val) {
+    var objects = [];
+    for (var i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+        if (typeof obj[i] == 'object') {
+            objects = objects.concat(getObjects(obj[i], key, val));
+        } else if (i == key && obj[key] == val) {
+            objects.push(obj);
+        }
+    }
+    return objects;
+}
+
+function levelSelect(level) {
+
+    $.getJSON( choosenCourse, function( data ) {
+        items = "";
+        yards = "";
+        var hcntr = 1;
+
+        var thisCourse = getObjects(data, 'tee_type', level);
+
+        for (every in thisCourse) {
+            items += "<div id='par_hole_" + hcntr + "'>" + thisCourse[every].par + "</div>";
+            yards += "<div id='yardage_" + hcntr + "'>" + thisCourse[every].yards + "</div>";
+            hcntr++;
+        }
+        console.log(thisCourse);
+    });
+
+    var parTitle = "<div id='par-title'>Par</div>";
+    var yardage = "<div id='yardage'>Yards</div>";
+    //var parTotalScore = "<div id='par-total'>" + parTotal + "</div>";
+
+    var self = $("#courseinf");
+    var Ylisting = $("#yardinf");
+
+    self.html(parTitle).delay(800).queue(function (next) {
+        $(this).append(items);
+        next();
+    });
+
+
+    Ylisting.html(yardage).delay(800).queue(function (next) {
+        $(this).append(yards);
+        next();
+    });
 
     // DELAY CARD SO NUMHOLES CAN UPDATE -  FIX WHEN YOU CAN DUMMY
 

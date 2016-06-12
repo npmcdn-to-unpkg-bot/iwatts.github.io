@@ -14,6 +14,9 @@
             padding: 3px 0px;
 			max-width: 129px;
         }
+        option {
+            text-transform: capitalize;
+        }
         .clear {
             clear: both;
         }
@@ -41,7 +44,7 @@
             max-width: 830px;
             margin: 0 auto;
         }
-        #scorecard, .course-menu, #courseinf {
+        #scorecard, .course-menu, #courseinf, #yardinf {
             text-align: center;
             min-width: 730px;
             position: relative;
@@ -60,7 +63,7 @@
             display: inline-block;
         }
         #scorecard .column.column-title .title-players {
-            min-width: 129px;
+            min-width: 133px;
             border-left: none;
             padding: 5px 0px;
         }
@@ -112,6 +115,21 @@
             padding: 2px 11.5px;
             border: 1px solid;
         }
+        #yardinf {
+            padding: 0px;
+            right: -21px;
+            display: inline-block;
+        }
+        #yardinf #yardage {
+            min-width: 113px;
+        }
+        #yardinf > div {
+            display: inline-block;
+            background: bisque;
+            padding: 2px 5.2px;
+            border: 1px solid;
+            font-size: 13px;
+        }
         .player-control {
             text-align: center;
             padding: 20px 0px;
@@ -162,7 +180,7 @@
             </div>
             <div>
                 Level:
-                <select id="level" onchange="">
+                <select id="level" onchange="levelSelect(this.value)">
                     <option disabled selected>Waiting on Course...</option>
                 </select>
             </div>
@@ -181,6 +199,7 @@
 
     </div>
 
+    <div id="yardinf"></div>
     <div id="courseinf"></div>
     <div id="scorecard"></div>
 
