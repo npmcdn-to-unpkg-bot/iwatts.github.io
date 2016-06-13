@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/flappygame.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/sheet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/starscape.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/the_new_blue_space_ship.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FlappyGame.html" afterPath="$PROJECT_DIR$/src/FlappyGame.html" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -258,8 +259,8 @@
       <recent name="https://github.com/dtschust/Zork.git" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/jamsine" />
       <recent name="$PROJECT_DIR$/src/img" />
+      <recent name="$PROJECT_DIR$/jamsine" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/js" />
     </key>
@@ -418,12 +419,12 @@
       <workItem from="1465742603611" duration="288000" />
       <workItem from="1465743064984" duration="2379000" />
       <workItem from="1465745731882" duration="11196000" />
-      <workItem from="1465825666184" duration="2408000" />
+      <workItem from="1465825666184" duration="2563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176848000" />
+    <option name="totallyTimeSpent" value="177003000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
