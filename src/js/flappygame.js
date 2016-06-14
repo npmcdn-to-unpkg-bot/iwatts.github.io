@@ -26,9 +26,17 @@ function main() {
     document.body.appendChild(canvas);
 
     fish = new Fish();
-    corals = new CoralCollection();
+    //corals = new CoralCollection();
 
     loadGraphics();
+}
+
+function Fish() {
+    this.x = 140;
+    this.y = 0;
+    this.draw = function (renderingContext) {
+
+    }
 }
 
 function windowSetup() {
@@ -49,6 +57,7 @@ function windowSetup() {
 
 function canvasSetup() {
     canvas = document.createElement("canvas");
+    canvas.style.border = '10px solid #000';
     canvas.width = width;
     canvas.height =  height;
     renderingContext = canvas.getContext("2d");
@@ -60,18 +69,19 @@ function onpress(evt){
 
 function loadGraphics() {
     var img = new Image();
-    img.src = "";
+    img.src = "img/sheet.png";
     img.onload = function () {
         initSprites(this);
         renderingContext.fillStyle = backgroundSprite.color;
+        renderingContext.fillRect(0, 0, width, height);
 
-        okbutton = {
+        /*okbutton = {
             x: (width - okbuttonSprite.width) / 2,
             y: height - 200,
             width: okbuttonSprite.width,
             height: okbuttonSprite.height
-        };
+        };*/
 
-        gameloop();
+        //gameloop();
     }
 }
