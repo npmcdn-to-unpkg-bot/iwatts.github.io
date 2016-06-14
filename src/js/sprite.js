@@ -14,7 +14,7 @@ function Sprite(img, x, y, width, height) {
 }
 
 Sprite.prototype.draw = function (renderingContext, x, y) {
-    renderingContext.drawImage(this.image, this.x, this.y, this.width, this.height, x, y, this.width, this.height);
+    renderingContext.drawImage(this.img, this.x, this.y, this.width, this.height, x, y, this.width, this.height);
 }
 
 function initSprites(img) {

@@ -74,6 +74,7 @@ function loadGraphics() {
         initSprites(this);
         renderingContext.fillStyle = backgroundSprite.color;
         renderingContext.fillRect(0, 0, width, height);
+        fishSprite[0].draw(renderingContext, 5, 5, 142, 50);
 
         /*okbutton = {
             x: (width - okbuttonSprite.width) / 2,
