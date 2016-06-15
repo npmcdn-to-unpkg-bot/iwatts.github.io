@@ -15,14 +15,14 @@ function Sprite(img, x, y, width, height) {
 
 Sprite.prototype.draw = function (renderingContext, x, y) {
     renderingContext.drawImage(this.img, this.x, this.y, this.width, this.height, x, y, this.width, this.height);
-}
+};
 
 function initSprites(img) {
     fishSprite = [
         new Sprite(img, 176, 115, 42, 28),
         new Sprite(img, 176, 144, 42, 28),
         new Sprite(img, 176, 172, 42, 28)
-    ]
+    ];
 
     backgroundSprite = new Sprite(img, 0, 0, 138, 114);
     backgroundSprite.color = "#8BE4FD";
