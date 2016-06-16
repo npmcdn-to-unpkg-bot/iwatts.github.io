@@ -4,6 +4,8 @@
 
 var fishSprite;
 var backgroundSprite;
+var foregroundSprite;
+var okButtonSprite;
 
 function Sprite(img, x, y, width, height) {
     this.img = img;
@@ -24,6 +26,10 @@ function initSprites(img) {
         new Sprite(img, 176, 173, 42, 28)
     ];
 
+    foregroundSprite = new Sprite(img, 138, 0, 112, 56);
+
     backgroundSprite = new Sprite(img, 0, 0, 138, 114);
     backgroundSprite.color = "#8BE4FD";
+
+    okButtonSprite = new Sprite(img, 119, 191, 40, 14);
 }

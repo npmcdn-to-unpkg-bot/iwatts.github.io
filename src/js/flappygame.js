@@ -13,6 +13,8 @@ var height;
 var foregroundPosition = 0;
 var frames = 0;
 
+var okButton;
+
 var states = {
     Splash: 0,
     Game: 1,
@@ -114,7 +116,8 @@ function onpress(evt) {
             fish.jump();
             break;
 
-        case states.Score: // Change from score to splash state if event within okButton bounding box
+        case states.Score:
+            // Change from score to splash state if event within okButton bounding box
             // Get event position
             var mouseX = evt.offsetX, mouseY = evt.offsetY;
 
@@ -128,7 +131,7 @@ function onpress(evt) {
                 okButton.y < mouseY && mouseY < okButton.y + okButton.height
             ) {
                 //console.log('click');
-                corals.reset();
+                //corals.reset();
                 currentState = states.Splash;
                 score = 0;
             }
@@ -149,7 +152,7 @@ function windowSetup() {
     }
 
     // on input event listener
-    //document.addEventListener(inputEvent, onpress);
+    document.addEventListener(inputEvent, onpress);
 }
 
 function canvasSetup() {
@@ -161,7 +164,37 @@ function canvasSetup() {
 }
 
 function onpress(evt){
+    switch (currentState) {
 
+        case states.Splash: // Start the game and update the fish velocity.
+            currentState = states.Game;
+            fish.jump();
+            break;
+
+        case states.Game: // The game is in progress. Update fish velocity.
+            fish.jump();
+            break;
+
+        case states.Score: // Change from score to splash state if event within okButton bounding box
+            // Get event position
+            var mouseX = evt.offsetX, mouseY = evt.offsetY;
+
+            if (mouseX == null || mouseY == null) {
+                mouseX = evt.touches[0].clientX;
+                mouseY = evt.touches[0].clientY;
+            }
+
+            // Check if within the okButton
+            if (okButton.x < mouseX && mouseX < okButton.x + okButton.width &&
+                okButton.y < mouseY && mouseY < okButton.y + okButton.height
+            ) {
+                //console.log('click');
+                //corals.reset();
+                currentState = states.Splash;
+                score = 0;
+            }
+            break;
+    }
 }
 
 function loadGraphics() {
@@ -173,12 +206,12 @@ function loadGraphics() {
         renderingContext.fillRect(0, 0, width, height);
         //fishSprite[0].draw(renderingContext, 5, 5, 142, 50);
 
-        /*okbutton = {
-            x: (width - okbuttonSprite.width) / 2,
+        okButton = {
+            x: (width - okButtonSprite.width) / 2,
             y: height - 200,
-            width: okbuttonSprite.width,
-            height: okbuttonSprite.height
-        };*/
+            width: okButtonSprite.width,
+            height: okButtonSprite.height
+        };
 
         gameLoop();
     }
@@ -212,7 +245,7 @@ function update() {
     }
 
     if (currentState === states.Game) {
-        corals.update();
+        //corals.update();
     }
 
     fish.update();
@@ -232,5 +265,8 @@ function render() {
     if (currentState === states.Score) {
         okButtonSprite.draw(renderingContext, okButton.x, okButton.y);
     }
+
+    foregroundSprite.draw(renderingContext, foregroundPosition, height - foregroundSprite.height);
+    foregroundSprite.draw(renderingContext, foregroundPosition + foregroundSprite.width, height - foregroundSprite.height);
 
 }
