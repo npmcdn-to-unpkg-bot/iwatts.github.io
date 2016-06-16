@@ -161,7 +161,7 @@ function canvasSetup() {
     canvas.width = width;
     canvas.height =  height;
     renderingContext = canvas.getContext("2d");
-}git 
+} 
 
 function loadGraphics() {
     var img = new Image();
