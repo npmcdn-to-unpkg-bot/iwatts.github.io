@@ -97,7 +97,7 @@ function Fish() {
 
         var n = this.animation[this.frame];
 
-        // draws the fish with center in origo
+        // draws the fish with center in
         fishSprite[n].draw(renderingContext, -fishSprite[n].width / 2, -fishSprite[n].height / 2);
 
         renderingContext.restore();
@@ -146,8 +146,8 @@ function windowSetup() {
 
     // Game set for mobile, if on desktop, change settings to run
     if (width >= 500) {
-        width = 380;
-        height = 430;
+        width = 360;
+        height = 410;
         inputEvent = "mousedown";
     }
 
