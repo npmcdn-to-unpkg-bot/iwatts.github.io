@@ -146,8 +146,8 @@ function windowSetup() {
 
     // Game set for mobile, if on desktop, change settings to run
     if (width >= 500) {
-        width = 360;
-        height = 410;
+        width = 320;
+        height = 380;
         inputEvent = "mousedown";
     }
 
