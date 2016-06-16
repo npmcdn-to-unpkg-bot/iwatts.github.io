@@ -161,41 +161,7 @@ function canvasSetup() {
     canvas.width = width;
     canvas.height =  height;
     renderingContext = canvas.getContext("2d");
-}
-
-function onpress(evt){
-    switch (currentState) {
-
-        case states.Splash: // Start the game and update the fish velocity.
-            currentState = states.Game;
-            fish.jump();
-            break;
-
-        case states.Game: // The game is in progress. Update fish velocity.
-            fish.jump();
-            break;
-
-        case states.Score: // Change from score to splash state if event within okButton bounding box
-            // Get event position
-            var mouseX = evt.offsetX, mouseY = evt.offsetY;
-
-            if (mouseX == null || mouseY == null) {
-                mouseX = evt.touches[0].clientX;
-                mouseY = evt.touches[0].clientY;
-            }
-
-            // Check if within the okButton
-            if (okButton.x < mouseX && mouseX < okButton.x + okButton.width &&
-                okButton.y < mouseY && mouseY < okButton.y + okButton.height
-            ) {
-                //console.log('click');
-                //corals.reset();
-                currentState = states.Splash;
-                score = 0;
-            }
-            break;
-    }
-}
+}git 
 
 function loadGraphics() {
     var img = new Image();

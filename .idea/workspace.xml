@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="" />
+    <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/flappygame.js" afterPath="$PROJECT_DIR$/src/js/flappygame.js" />
+    </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,21 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="flappygame.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="flappygame.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/flappygame.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+            <state relative-caret-position="312">
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flappygame.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="flappygame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="73" column="90" selection-start-line="73" selection-start-column="90" selection-end-line="73" selection-end-column="90" />
+            <state relative-caret-position="15">
+              <caret line="163" column="1" selection-start-line="163" selection-start-column="1" selection-end-line="163" selection-end-column="1" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -121,8 +124,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/FlappyGame.html" />
         <option value="$PROJECT_DIR$/src/js/sprite.js" />
-        <option value="$PROJECT_DIR$/src/js/flappygame.js" />
         <option value="$PROJECT_DIR$/src/flappygame.html" />
+        <option value="$PROJECT_DIR$/src/js/flappygame.js" />
       </list>
     </option>
   </component>
@@ -424,12 +427,12 @@
       <workItem from="1465825666184" duration="2733000" />
       <workItem from="1465912370183" duration="6690000" />
       <workItem from="1465997328720" duration="406000" />
-      <workItem from="1466084624834" duration="5199000" />
+      <workItem from="1466084624834" duration="5585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189468000" />
+    <option name="totallyTimeSpent" value="189854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -442,7 +445,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1300" height="955" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.241595" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -452,7 +455,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296837" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24939856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28439307" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28439307" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976826" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -822,21 +825,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
+    <entry file="file://$PROJECT_DIR$/src/flappygame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="73" column="90" selection-start-line="73" selection-start-column="90" selection-end-line="73" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flappygame.html">
+    <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="15">
+          <caret line="163" column="1" selection-start-line="163" selection-start-column="1" selection-end-line="163" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
