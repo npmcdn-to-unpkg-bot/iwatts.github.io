@@ -21,7 +21,7 @@ function initSprites(img) {
     fishSprite = [
         new Sprite(img, 176, 115, 42, 28),
         new Sprite(img, 176, 144, 42, 28),
-        new Sprite(img, 176, 172, 42, 28)
+        new Sprite(img, 176, 173, 42, 28)
     ];
 
     backgroundSprite = new Sprite(img, 0, 0, 138, 114);
