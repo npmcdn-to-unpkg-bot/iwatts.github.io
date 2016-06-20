@@ -113,19 +113,20 @@ function onpress(evt) {
             currentState = states.Game;
             fish.jump();
             score ++;
-            console.log(score);
             break;
 
         case states.Game: // The game is in progress. Update fish velocity.
             fish.jump();
             score ++;
-            console.log(score);
             break;
 
         case states.Score:
             // Change from score to splash state if event within okButton bounding box
             // Get event position
             var mouseX = evt.offsetX, mouseY = evt.offsetY;
+			total = score;
+			score = 0;
+            console.log(total);
 
             if (mouseX == null || mouseY == null) {
                 mouseX = evt.touches[0].clientX;
@@ -139,8 +140,6 @@ function onpress(evt) {
                 //console.log('click');
                 //corals.reset();
                 currentState = states.Splash;
-                total = score;
-                console.log(total);
             }
             break;
     }
@@ -230,8 +229,10 @@ function render() {
     renderingContext.fillRect(0, 0, width, height);
 
     // Draw background sprites
-    backgroundSprite.draw(renderingContext, 0, height - backgroundSprite.height);
-    backgroundSprite.draw(renderingContext, backgroundSprite.width, height - backgroundSprite.height);
+    backgroundSprite.draw(renderingContext, 0, 0);
+    backgroundSprite.draw(renderingContext, 0, 200);
+	backgroundSprite.draw(renderingContext, 120, 0);
+	backgroundSprite.draw(renderingContext, 120, 200);
 
     fish.draw(renderingContext);
 

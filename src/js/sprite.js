@@ -28,7 +28,7 @@ function initSprites(img) {
 
     foregroundSprite = new Sprite(img, 138, 0, 112, 56);
 
-    backgroundSprite = new Sprite(img, 0, 0, 138, 114);
+    backgroundSprite = new Sprite(img, 0, 0, 138, 134);
     backgroundSprite.color = "#8BE4FD";
 
     okButtonSprite = new Sprite(img, 119, 191, 40, 14);
