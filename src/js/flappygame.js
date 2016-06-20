@@ -14,6 +14,8 @@ var foregroundPosition = 0;
 var frames = 0;
 
 var okButton;
+var score = 0;
+var total = 0;
 
 var states = {
     Splash: 0,
@@ -110,10 +112,14 @@ function onpress(evt) {
         case states.Splash: // Start the game and update the fish velocity.
             currentState = states.Game;
             fish.jump();
+            score ++;
+            console.log(score);
             break;
 
         case states.Game: // The game is in progress. Update fish velocity.
             fish.jump();
+            score ++;
+            console.log(score);
             break;
 
         case states.Score:
@@ -133,7 +139,8 @@ function onpress(evt) {
                 //console.log('click');
                 //corals.reset();
                 currentState = states.Splash;
-                score = 0;
+                total = score;
+                console.log(total);
             }
             break;
     }
@@ -161,7 +168,7 @@ function canvasSetup() {
     canvas.width = width;
     canvas.height =  height;
     renderingContext = canvas.getContext("2d");
-} 
+}
 
 function loadGraphics() {
     var img = new Image();
