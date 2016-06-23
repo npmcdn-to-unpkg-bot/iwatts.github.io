@@ -239,6 +239,9 @@ function render() {
     if (currentState === states.Score) {
         okButtonSprite.draw(renderingContext, okButton.x, okButton.y);
     }
+    if (currentState === states.Splash) {
+        okButtonSprite.draw(renderingContext, okButton.x, okButton.y);
+    }
 
     foregroundSprite.draw(renderingContext, foregroundPosition, height - foregroundSprite.height);
     foregroundSprite.draw(renderingContext, foregroundPosition + foregroundSprite.width, height - foregroundSprite.height);
