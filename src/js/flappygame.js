@@ -309,8 +309,8 @@ function update() {
     frames++;
 
     if (currentState !== states.Score) {
-        foregroundPosition = (foregroundPosition - 2) % 14; // Move left two px each frame. Wrap every 14px.
-        backgroundPosition = (backgroundPosition - 0.3) % 275; // Move left 1/2 px each frame. Wrap every 275px.
+        foregroundPosition = (foregroundPosition - 2) % 224; // Move left two px each frame. Wrap every 14px.
+        backgroundPosition = (backgroundPosition - 0.3) % 274; // Move left 3/10ths px each frame. Wrap every 275px.
 
     }
 
@@ -345,5 +345,6 @@ function render() {
 
     foregroundSprite.draw(renderingContext, foregroundPosition, height - foregroundSprite.height);
     foregroundSprite.draw(renderingContext, foregroundPosition + foregroundSprite.width, height - foregroundSprite.height);
+	foregroundSprite.draw(renderingContext, foregroundPosition + (foregroundSprite.width * 2), height - foregroundSprite.height);
 
 }

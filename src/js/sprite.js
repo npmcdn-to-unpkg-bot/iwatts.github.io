@@ -24,14 +24,15 @@ function initSprites(img) {
     fishSprite = [
         new Sprite(img, 176, 115, 42, 28),
         new Sprite(img, 176, 144, 42, 28),
-        new Sprite(img, 176, 173, 42, 28)
+        new Sprite(img, 176, 173, 42, 28),
+		new Sprite(img, 218, 144, 42, 28)
     ];
 
     foregroundSprite = new Sprite(img, 138, 0, 112, 56);
 
-    backgroundSprite = new Sprite(img, 0, 0, 138, 134);
+    backgroundSprite = new Sprite(img, 0, 0, 137, 134);
     backgroundSprite.color = "#000000";
 
     okButtonSprite = new Sprite(img, 119, 191, 40, 14);
-    playButtonSprite = new Sprite(img, 119, 191, 40, 14);
+    playButtonSprite = new Sprite(img, 119, 176, 40, 14);
 }
