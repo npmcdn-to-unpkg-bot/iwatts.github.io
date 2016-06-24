@@ -151,7 +151,7 @@ function MineCollection() {
 
 function Mine() {
     this.x = 500;
-    this.y = height - (mineSprite.height + foregroundSprite.height + 100 + 200 * Math.random());
+    this.y = height - (mineSprite.height + foregroundSprite.height + 90 + 200 * Math.random());
     this.width = mineSprite.width;
     this.height = mineSprite.height;
 
