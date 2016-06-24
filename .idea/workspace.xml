@@ -37,8 +37,8 @@
       <file leaf-file-name="flappygame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="223" column="24" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="24" />
+            <state relative-caret-position="247">
+              <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -433,12 +433,12 @@
       <workItem from="1466515635403" duration="914000" />
       <workItem from="1466602208000" duration="504000" />
       <workItem from="1466689055947" duration="4878000" />
-      <workItem from="1466775309850" duration="5133000" />
+      <workItem from="1466775309850" duration="7282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202655000" />
+    <option name="totallyTimeSpent" value="204804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -840,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="223" column="24" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="24" />
+        <state relative-caret-position="247">
+          <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>

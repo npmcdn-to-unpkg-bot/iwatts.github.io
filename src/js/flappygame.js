@@ -128,7 +128,7 @@ function MineCollection() {
             var mine = this._mines[i];
 
             if (i === 0) {
-                //mine.detectCollision();
+                mine.detectCollision();
             }
 
             mine.x -= 2;
@@ -163,17 +163,24 @@ function Mine() {
         // intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
-        var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 110), this.y + 2 * this.height + 80);
+        var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 90), this.y + 2 * this.height + 80);
+
+        console.log(cx);
+        console.log(cy1);
+        console.log(cy2);
+
         // Closest difference
         var dx = fish.x - cx;
         var dy1 = fish.y - cy1;
         var dy2 = fish.y - cy2;
+
         // Vector length
         var d1 = dx * dx + dy1 * dy1;
         var d2 = dx * dx + dy2 * dy2;
         var r = fish.radius * fish.radius;
+
         // Determine intersection
-        if (r > d1 || r > d2) {
+        if (r >= d1 || r == d2) {
             currentState = states.Score;
         }
     };
