@@ -7,6 +7,8 @@ var backgroundSprite;
 var foregroundSprite;
 var okButtonSprite;
 var playButtonSprite;
+var gameOverSprite;
+var mineSprite;
 
 function Sprite(img, x, y, width, height) {
     this.img = img;
@@ -30,8 +32,12 @@ function initSprites(img) {
 
     foregroundSprite = new Sprite(img, 138, 0, 112, 56);
 
+    gameOverSprite = new Sprite(img, 60, 137, 94, 20);
+
     backgroundSprite = new Sprite(img, 0, 0, 137, 134);
     backgroundSprite.color = "#000000";
+
+    mineSprite = new Sprite(img, 246, 173, 42, 28);
 
     okButtonSprite = new Sprite(img, 119, 191, 40, 14);
     playButtonSprite = new Sprite(img, 119, 176, 40, 14);
