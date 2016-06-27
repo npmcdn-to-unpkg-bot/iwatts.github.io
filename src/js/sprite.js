@@ -25,10 +25,10 @@ Sprite.prototype.draw = function (renderingContext, x, y) {
 
 function initSprites(img) {
     fishSprite = [
-        new Sprite(img, 176, 115, 42, 28),
-        new Sprite(img, 176, 144, 42, 28),
-        new Sprite(img, 176, 173, 42, 28),
-		new Sprite(img, 218, 144, 42, 28)
+        new Sprite(img, 176, 115, 33, 28),
+        new Sprite(img, 176, 144, 33, 28),
+        new Sprite(img, 176, 173, 33, 28),
+		new Sprite(img, 218, 144, 33, 28)
     ];
 
     boomSprite = [
