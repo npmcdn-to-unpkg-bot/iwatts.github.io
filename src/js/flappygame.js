@@ -7,7 +7,9 @@ var crasher;
 var currentState;
 
 var canvas;
+var scoreBox;
 var renderingContext;
+var boomFrame = 0;
 
 var width;
 var height;
@@ -113,14 +115,11 @@ function Fish() {
 }
 
 function Boom() {
-    this.x = 140;
+    this.x = 130;
     this.y = 280;
 
-    var boomFrame = 0;
-
     this.draw = function (renderingContext) {
-        //boomSprite[20].draw(renderingContext, this.x, this.y);
-        if (boomFrame <= 24) {
+        if (boomFrame <= boomSprite.length - 1) {
             this.y -= 1;
             this.x -= 1.5;
 
@@ -186,24 +185,20 @@ function Mine() {
         // intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
-        var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 90), this.y + 2 * this.height + 80);
 
-        //console.log(cx);
-        //console.log(cy1);
-        //console.log(cy2);
 
         // Closest difference
         var dx = fish.x - cx;
         var dy1 = fish.y - cy1;
-        var dy2 = fish.y - cy2;
+
 
         // Vector length
         var d1 = dx * dx + dy1 * dy1;
-        var d2 = dx * dx + dy2 * dy2;
+
         var r = fish.radius * fish.radius;
 
         // Determine intersection
-        if (r > d1 || r > d2) {
+        if (r > d1) {
             currentState = states.Score;
         }
     };
@@ -253,6 +248,13 @@ function onpress(evt) {
             if (okButton.x < mouseX && mouseX < okButton.x + okButton.width && okButton.y < mouseY && mouseY < okButton.y + okButton.height ) {
                 //console.log('click');
                 mines.reset();
+
+                crasher.x = 130;
+                crasher.y = 280;
+                boomFrame = 0;
+                
+                groundCrash = false;
+
                 currentState = states.Splash;
             }
             break;
@@ -281,6 +283,13 @@ function canvasSetup() {
     canvas.width = width;
     canvas.height =  height;
     renderingContext = canvas.getContext("2d");
+}
+
+function scoreSetup() {
+    scoreBox = document.createElement("div");
+
+    scoreBox.className = "score";
+    scoreBox.style.border = '1px solid #000';
 }
 
 function loadGraphics() {
@@ -318,6 +327,7 @@ function loadGraphics() {
 function main() {
     windowSetup();
     canvasSetup();
+    scoreSetup();
 
     currentState = states.Splash;
 
@@ -342,14 +352,12 @@ function update() {
     if (currentState !== states.Score) {
         foregroundPosition = (foregroundPosition - 2) % 224; // Move left two px each frame. Wrap every 14px.
         backgroundPosition = (backgroundPosition - 0.3) % 274; // Move left 3/10ths px each frame. Wrap every 275px.
-
     }
 
     if (currentState === states.Game) {
         mines.update();
         //Set the score counter in here
         score++;
-
     }
 
     fish.update();
@@ -377,6 +385,7 @@ function render() {
         }
         okButtonSprite.draw(renderingContext, okButton.x, okButton.y);
         gameOverSprite.draw(renderingContext, gameOver.x, gameOver.y);
+        //crasher.reset();
     }
     if (currentState === states.Splash) {
         playButtonSprite.draw(renderingContext, playButton.x, playButton.y);
