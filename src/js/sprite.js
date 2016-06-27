@@ -9,6 +9,7 @@ var okButtonSprite;
 var playButtonSprite;
 var gameOverSprite;
 var mineSprite;
+var boomSprite;
 
 function Sprite(img, x, y, width, height) {
     this.img = img;
@@ -28,6 +29,13 @@ function initSprites(img) {
         new Sprite(img, 176, 144, 42, 28),
         new Sprite(img, 176, 173, 42, 28),
 		new Sprite(img, 218, 144, 42, 28)
+    ];
+
+    boomSprite = [
+        new Sprite(img, 176, 115, 42, 28),
+        new Sprite(img, 176, 144, 42, 28),
+        new Sprite(img, 176, 173, 42, 28),
+        new Sprite(img, 218, 144, 42, 28)
     ];
 
     foregroundSprite = new Sprite(img, 138, 0, 112, 56);

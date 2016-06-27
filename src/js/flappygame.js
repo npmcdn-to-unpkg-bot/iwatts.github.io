@@ -70,7 +70,8 @@ function Fish() {
 
         // Change to the score state when fish touches the ground
         if (this.y >= height - foregroundSprite.height - 10) {
-            this.y = height - foregroundSprite.height - 10;
+            this.y = height - foregroundSprite.height + 50;
+            this.groundCrash = true;
 
             if (currentState === states.Game) {
                 currentState = states.Score;
@@ -108,6 +109,11 @@ function Fish() {
         renderingContext.restore();
     }
 }
+
+function boom() {
+    
+}
+
 function MineCollection() {
     this._mines = [];
 
@@ -180,7 +186,7 @@ function Mine() {
         var r = fish.radius * fish.radius;
 
         // Determine intersection
-        if (r >= d1 || r == d2) {
+        if (r > d1 || r > d2) {
             currentState = states.Score;
         }
     };
