@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="js/sprite.js"></script>
     <script src="js/flappygame.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
     <style>
         body{
@@ -28,6 +29,9 @@
             clear: both;
             position: relative;
             min-height: 860px;
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;
+			background-image: url(img/Thunderforge.jpg);
         }
         canvas {
             display: block;
@@ -40,6 +44,19 @@
             right: 0;
             border-radius: 5px;
         }
+		.score,.gt {
+			    display: block;
+				position: absolute;
+				margin: auto;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				border-radius: 5px;
+				text-align: center;
+		}
+		.score {margin-top: 700px;}
+		.gt {margin-top: 720px;}
         @media screen and (max-width: 480px) {
             body {
                 min-height: auto;

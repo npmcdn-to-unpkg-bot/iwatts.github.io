@@ -234,7 +234,7 @@ function onpress(evt) {
     switch (currentState) {
 
         case states.Splash: // Start the game and update the fish velocity.
-            score = 0;
+            
             if (mouseX == null || mouseY == null) {
                 mouseX = evt.touches[0].clientX;
                 mouseY = evt.touches[0].clientY;
@@ -255,8 +255,7 @@ function onpress(evt) {
         case states.Score:
             // Change from score to splash state if event within okButton bounding box
             // Get event position
-            total = score;
-            console.log(total);
+            //console.log(total);
 
             if (mouseX == null || mouseY == null) {
                 mouseX = evt.touches[0].clientX;
@@ -267,6 +266,7 @@ function onpress(evt) {
             if (okButton.x < mouseX && mouseX < okButton.x + okButton.width && okButton.y < mouseY && mouseY < okButton.y + okButton.height ) {
                 //console.log('click');
                 mines.reset();
+				score = 0;
 
                 crasher.x = 130;
                 crasher.y = 280;
@@ -305,13 +305,6 @@ function canvasSetup() {
     renderingContext = canvas.getContext("2d");
 }
 
-function scoreSetup() {
-    scoreBox = document.createElement("div");
-
-    scoreBox.className = "score";
-    scoreBox.style.border = '1px solid #000';
-}
-
 function loadGraphics() {
     var img = new Image();
     img.src = "img/sheet.png";
@@ -347,11 +340,12 @@ function loadGraphics() {
 function main() {
     windowSetup();
     canvasSetup();
-    scoreSetup();
 
     currentState = states.Splash;
 
     document.body.appendChild(canvas);
+	$("canvas").after( "<div class='score'>Total: 0</div>" );
+	$(".score").after( "<div class='gt'></div>" );
 
     fish = new Fish();
     mines = new MineCollection();
@@ -379,7 +373,15 @@ function update() {
         mines.update();
         //Set the score counter in here
         score++;
+		$(".score").text("Total:" + score);
     }
+	if (currentState === states.Score){
+		if (score >= total) {
+			total = score;
+			document.cookie = "highScore=" + total;
+			$(".gt").text("High Score:" + total);
+		}
+	}
 
     fish.update();
 
@@ -419,4 +421,33 @@ function render() {
     foregroundSprite.draw(renderingContext, foregroundPosition + foregroundSprite.width, height - foregroundSprite.height);
 	foregroundSprite.draw(renderingContext, foregroundPosition + (foregroundSprite.width * 2), height - foregroundSprite.height);
 
+}
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var highScore=getCookie("highScore");
+    if (highScore != "") {
+        $(".gt").text("High Score:" + highScore);
+    }
 }
