@@ -3,6 +3,7 @@
  */
 var fish;
 var mines;
+var crasher;
 var currentState;
 
 var canvas;
@@ -13,6 +14,7 @@ var height;
 var foregroundPosition = 0;
 var backgroundPosition = 0;
 var frames = 0;
+var groundCrash = false;
 
 var okButton;
 var playButton;
@@ -33,6 +35,7 @@ function Fish() {
     this.frame = 0;
     this.velocity = 0;
     this.animation = [0, 1, 2, 1];
+
 
     this.rotation = 0;
     this.radius = 12;
@@ -70,14 +73,15 @@ function Fish() {
 
         // Change to the score state when fish touches the ground
         if (this.y >= height - foregroundSprite.height - 10) {
-            this.y = height - foregroundSprite.height + 50;
-            this.groundCrash = true;
+            this.y += height - foregroundSprite.height + 50;
+            groundCrash = true;
 
             if (currentState === states.Game) {
                 currentState = states.Score;
             }
 
-            this.velocity = this._jump; // Set velocity to jump speed for correct rotation
+            this.velocity = this._jump;
+            // Set velocity to jump speed for correct rotation
         }
 
         // If our player hits the top of the canvas, we crash him
@@ -97,21 +101,34 @@ function Fish() {
     this.draw = function (renderingContext) {
         renderingContext.save();
 
-        // translate and rotate renderingContext coordinate system
         renderingContext.translate(this.x, this.y);
         renderingContext.rotate(this.rotation);
 
         var n = this.animation[this.frame];
 
-        // draws the fish with center in
         fishSprite[n].draw(renderingContext, -fishSprite[n].width / 2, -fishSprite[n].height / 2);
 
         renderingContext.restore();
     }
 }
 
-function boom() {
-    
+function Boom() {
+    this.x = 140;
+    this.y = 280;
+
+    var boomFrame = 0;
+
+    this.draw = function (renderingContext) {
+        //boomSprite[20].draw(renderingContext, this.x, this.y);
+        if (boomFrame <= 24) {
+            this.y -= 1;
+            this.x -= 1.5;
+
+            boomSprite[boomFrame].draw(renderingContext, this.x, this.y);
+            boomFrame++;
+        }
+    };
+
 }
 
 function MineCollection() {
@@ -171,9 +188,9 @@ function Mine() {
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
         var cy2 = Math.min(Math.max(fish.y, this.y + this.height + 90), this.y + 2 * this.height + 80);
 
-        console.log(cx);
-        console.log(cy1);
-        console.log(cy2);
+        //console.log(cx);
+        //console.log(cy1);
+        //console.log(cy2);
 
         // Closest difference
         var dx = fish.x - cx;
@@ -203,6 +220,7 @@ function onpress(evt) {
     switch (currentState) {
 
         case states.Splash: // Start the game and update the fish velocity.
+            score = 0;
             if (mouseX == null || mouseY == null) {
                 mouseX = evt.touches[0].clientX;
                 mouseY = evt.touches[0].clientY;
@@ -224,7 +242,6 @@ function onpress(evt) {
             // Change from score to splash state if event within okButton bounding box
             // Get event position
             total = score;
-            score = 0;
             console.log(total);
 
             if (mouseX == null || mouseY == null) {
@@ -273,7 +290,6 @@ function loadGraphics() {
         initSprites(this);
         renderingContext.fillStyle = backgroundSprite.color;
         renderingContext.fillRect(0, 0, width, height);
-        //fishSprite[0].draw(renderingContext, 5, 5, 142, 50);
 
         okButton = {
             x: (width - okButtonSprite.width) / 2,
@@ -309,6 +325,7 @@ function main() {
 
     fish = new Fish();
     mines = new MineCollection();
+    crasher = new Boom();
 
     loadGraphics();
 }
@@ -355,6 +372,9 @@ function render() {
     mines.draw(renderingContext);
 
     if (currentState === states.Score) {
+        if (groundCrash) {
+            crasher.draw(renderingContext);
+        }
         okButtonSprite.draw(renderingContext, okButton.x, okButton.y);
         gameOverSprite.draw(renderingContext, gameOver.x, gameOver.y);
     }

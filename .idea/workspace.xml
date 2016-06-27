@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sheet.psd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/sheet.png" afterPath="$PROJECT_DIR$/src/img/sheet.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/flappygame.js" afterPath="$PROJECT_DIR$/src/js/flappygame.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/sprite.js" afterPath="$PROJECT_DIR$/src/js/sprite.js" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flappygame.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="flappygame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+            <state relative-caret-position="450">
+              <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -47,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sprite.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sprite.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/sprite.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+            <state relative-caret-position="450">
+              <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -125,8 +124,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/FlappyGame.html" />
         <option value="$PROJECT_DIR$/src/flappygame.html" />
-        <option value="$PROJECT_DIR$/src/js/flappygame.js" />
         <option value="$PROJECT_DIR$/src/js/sprite.js" />
+        <option value="$PROJECT_DIR$/src/js/flappygame.js" />
       </list>
     </option>
   </component>
@@ -435,12 +434,12 @@
       <workItem from="1466602208000" duration="504000" />
       <workItem from="1466689055947" duration="4878000" />
       <workItem from="1466775309850" duration="7428000" />
-      <workItem from="1467034991375" duration="840000" />
+      <workItem from="1467034991375" duration="7670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205790000" />
+    <option name="totallyTimeSpent" value="212620000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,7 +452,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1316" height="955" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23861004" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -463,7 +462,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296837" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24939856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28439307" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28439307" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976826" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -497,7 +496,7 @@
           <line>49</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -830,20 +829,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
+    <entry file="file://$PROJECT_DIR$/src/js/sprite.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+        <state relative-caret-position="450">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/sprite.js">
+    <entry file="file://$PROJECT_DIR$/src/js/flappygame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state relative-caret-position="450">
+          <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>

@@ -32,10 +32,36 @@ function initSprites(img) {
     ];
 
     boomSprite = [
-        new Sprite(img, 176, 115, 42, 28),
-        new Sprite(img, 176, 144, 42, 28),
-        new Sprite(img, 176, 173, 42, 28),
-        new Sprite(img, 218, 144, 42, 28)
+        new Sprite(img, 272, 15, 32, 28),
+        new Sprite(img, 304, 15, 32, 28),
+        new Sprite(img, 336, 15, 32, 28),
+        new Sprite(img, 368, 15, 32, 28),
+        new Sprite(img, 400, 15, 32, 28),
+
+        new Sprite(img, 272, 43, 32, 28),
+        new Sprite(img, 304, 43, 32, 28),
+        new Sprite(img, 336, 43, 32, 28),
+        new Sprite(img, 368, 43, 32, 28),
+        new Sprite(img, 400, 43, 32, 28),
+
+        new Sprite(img, 272, 74, 32, 28),
+        new Sprite(img, 304, 74, 32, 28),
+        new Sprite(img, 336, 74, 32, 28),
+        new Sprite(img, 368, 74, 32, 28),
+        new Sprite(img, 400, 74, 32, 28),
+
+        new Sprite(img, 272, 107, 32, 28),
+        new Sprite(img, 304, 107, 32, 28),
+        new Sprite(img, 336, 107, 32, 28),
+        new Sprite(img, 368, 107, 32, 28),
+        new Sprite(img, 400, 107, 32, 28),
+
+        new Sprite(img, 272, 137, 32, 28),
+        new Sprite(img, 304, 137, 32, 28),
+        new Sprite(img, 336, 137, 32, 28),
+        new Sprite(img, 368, 137, 32, 28),
+        new Sprite(img, 400, 137, 32, 28)
+
     ];
 
     foregroundSprite = new Sprite(img, 138, 0, 112, 56);
