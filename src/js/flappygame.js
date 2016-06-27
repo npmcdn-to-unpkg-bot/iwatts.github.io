@@ -353,6 +353,7 @@ function main() {
 	mineCrasher = new CollisionBoom();
 
     loadGraphics();
+	checkCookie();
 }
 
 function gameLoop() {
