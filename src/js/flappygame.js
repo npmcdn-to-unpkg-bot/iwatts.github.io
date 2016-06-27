@@ -4,6 +4,7 @@
 var fish;
 var mines;
 var crasher;
+var mineCrasher;
 var currentState;
 
 var canvas;
@@ -17,12 +18,16 @@ var foregroundPosition = 0;
 var backgroundPosition = 0;
 var frames = 0;
 var groundCrash = false;
+var mineCrash = false;
 
 var okButton;
 var playButton;
 var gameOver;
 var score = 0;
 var total = 0;
+
+var xloc = 0;
+var yloc = 0;
 
 var states = {
     Splash: 0,
@@ -127,7 +132,15 @@ function Boom() {
             boomFrame++;
         }
     };
+}
+function CollisionBoom() {
 
+    this.draw = function (renderingContext) {
+        if (boomFrame <= boomSprite.length - 1) {
+            boomSprite[boomFrame].draw(renderingContext, xloc, yloc);
+            boomFrame++;
+        }
+    };
 }
 
 function MineCollection() {
@@ -142,18 +155,21 @@ function MineCollection() {
     };
 
     this.update = function () {
-        if (frames % 100 === 0) {
+        if (frames % 80 === 0) {
             this.add();
         }
 
         for (var i = 0, len = this._mines.length; i < len; i++) {
             var mine = this._mines[i];
 
+			 mine.x -= 2;
             if (i === 0) {
                 mine.detectCollision();
+				if (mineCrash) {
+
+				}
             }
 
-            mine.x -= 2;
             if (mine.x < -mine.width) {
                 this._mines.splice(i,1);
                 i--;
@@ -163,7 +179,6 @@ function MineCollection() {
         }
     };
     this.draw = function () {
-
         for (var i = 0, len = this._mines.length; i < len; i++) {
             var mine = this._mines[i];
             mine.draw();
@@ -182,13 +197,16 @@ function Mine() {
      * Calculates x/y difference and use normal vector length calculation to determine
      */
     this.detectCollision = function () {
-        // intersection
+        xloc = this.x;
+		yloc = this.y;
+
+		// intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
 
 
         // Closest difference
-        var dx = fish.x - cx;
+        var dx = fish.x - (cx + 5);
         var dy1 = fish.y - cy1;
 
 
@@ -200,6 +218,7 @@ function Mine() {
         // Determine intersection
         if (r > d1) {
             currentState = states.Score;
+			mineCrash = true;
         }
     };
 
@@ -252,8 +271,9 @@ function onpress(evt) {
                 crasher.x = 130;
                 crasher.y = 280;
                 boomFrame = 0;
-                
+
                 groundCrash = false;
+				mineCrash = false;
 
                 currentState = states.Splash;
             }
@@ -336,6 +356,7 @@ function main() {
     fish = new Fish();
     mines = new MineCollection();
     crasher = new Boom();
+	mineCrasher = new CollisionBoom();
 
     loadGraphics();
 }
@@ -383,6 +404,9 @@ function render() {
         if (groundCrash) {
             crasher.draw(renderingContext);
         }
+		if (mineCrash) {
+			mineCrasher.draw(renderingContext)
+		}
         okButtonSprite.draw(renderingContext, okButton.x, okButton.y);
         gameOverSprite.draw(renderingContext, gameOver.x, gameOver.y);
         //crasher.reset();
