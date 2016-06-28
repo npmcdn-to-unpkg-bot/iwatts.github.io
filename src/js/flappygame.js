@@ -202,7 +202,7 @@ function Mine() {
 
 		// intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + (this.width - 1));
-        var cy1 = Math.min(Math.max(fish.y, this.y), this.y + (this.height - 1));
+        var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
 
 
         // Closest difference
