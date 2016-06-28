@@ -212,7 +212,6 @@ function Mine() {
 
         // Vector length
         var d1 = dx * dx + dy1 * dy1;
-
         var r = fish.radius * fish.radius;
 
         // Determine intersection
@@ -233,7 +232,8 @@ function onpress(evt) {
 
     switch (currentState) {
 
-        case states.Splash: // Start the game and update the fish velocity.
+        case states.Splash:
+            // Start the game and update the fish velocity.
 
             if (mouseX == null || mouseY == null) {
                 mouseX = evt.touches[0].clientX;
@@ -241,7 +241,8 @@ function onpress(evt) {
             }
 
             // Check if within the playButton
-            if (playButton.x < mouseX && mouseX < playButton.x + playButton.width && playButton.y < mouseY && mouseY < playButton.y + playButton.height ) {
+            if (playButton.x < mouseX && mouseX < playButton.x + playButton.width &&
+                playButton.y < mouseY && mouseY < playButton.y + playButton.height ) {
                 currentState = states.Game;
                 fish.jump();
             }
@@ -263,7 +264,8 @@ function onpress(evt) {
             }
 
             // Check if within the okButton
-            if (okButton.x < mouseX && mouseX < okButton.x + okButton.width && okButton.y < mouseY && mouseY < okButton.y + okButton.height ) {
+            if (okButton.x < mouseX && mouseX < okButton.x + okButton.width &&
+                okButton.y < mouseY && mouseY < okButton.y + okButton.height ) {
                 //console.log('click');
                 mines.reset();
 				score = 0;

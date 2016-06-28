@@ -7,7 +7,7 @@
 <body>
 
 <script>
-    function Queue() {
+    /*function Queue() {
         this._oldestIndex = 1;
         this._newestIndex = 1;
         this._storage = {};
@@ -44,7 +44,50 @@
     myQueue.enqueue("Richard");
 
     console.log(myQueue.dequeue());
-    console.log(myQueue.size());
+    console.log(myQueue.size());*/
+
+    var allCapsPromise = allCaps('my string');
+    var allCapsPromise1 = allCaps('my string');
+    var allCapsPromise2 = allCaps('my string');
+    var allCapsPromise3 = allCaps('my string');
+    var allCapsPromise4 = allCaps('my string');
+
+    var success = function (allCapsString) {
+        console.log(allCapsString);
+    };
+    var failure = function (error) {
+        console.log(error.message);
+    };
+    var errorHandler = function () {
+
+    };
+
+    allCapsPromise.then(success, failure);
+
+    allCapsPromise.catch(errorHandler);
+
+    function allCaps(input) {
+        return new Promise(function (resolve,reject) {
+            if (input.length == 0) {
+                var error = {
+                    message:"Invalid Input"
+                };
+                reject(error);
+            }
+            var upperCaseInput = input.toUpperCase();
+            resolve(upperCaseInput);
+        })
+    }
+
+    var p1 = new Promise(
+        function (resolve,reject) {
+            log.insertAdjacentHTML('beforeend', thisPromiseCount + ') promise started (<small>async code started</small>)<br/>');
+            window.setTimeout(
+                function () {
+                    resolve(thisPromiseCount);
+                }, Math.Random() * 2000 + 1000);
+        }
+    )
 
 </script>
 </body>
