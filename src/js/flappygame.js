@@ -201,8 +201,8 @@ function Mine() {
 		yloc = this.y;
 
 		// intersection
-        var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
-        var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
+        var cx = Math.min(Math.max(fish.x, this.x), this.x + (this.width - 1));
+        var cy1 = Math.min(Math.max(fish.y, this.y), this.y + (this.height - 1));
 
 
         // Closest difference
@@ -234,7 +234,7 @@ function onpress(evt) {
     switch (currentState) {
 
         case states.Splash: // Start the game and update the fish velocity.
-            
+
             if (mouseX == null || mouseY == null) {
                 mouseX = evt.touches[0].clientX;
                 mouseY = evt.touches[0].clientY;
