@@ -171,7 +171,7 @@ function MineCollection() {
         for (var i = 0, len = this._mines.length; i < len; i++) {
             var mine = this._mines[i];
 
-			 mine.x -= 2;
+			 mine.x -= 2.5;
             if (i === 0) {
                 mine.detectCollision();
 				if (mineBoom) {
@@ -188,7 +188,6 @@ function MineCollection() {
                 this._mines.splice(i,1);
                 i--;
                 len--;
-
             }
         }
     };
@@ -223,7 +222,7 @@ function Mine() {
 
 
         // Vector length
-        var d1 = dx * dx + dy1 * dy1;
+        var d1 = (dx * dx) + (dy1 * dy1);
         var r = fish.radius * fish.radius;
 
         // Determine intersection
