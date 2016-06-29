@@ -48,7 +48,7 @@ function Fish() {
     this.radius = 12;
 
     this.gravity =  0.25;
-    this._jump = 3.6;
+    this._jump = 4.8;
 
     this.jump = function () {
         this.velocity = -this._jump;
@@ -201,12 +201,12 @@ function Mine() {
 		yloc = this.y;
 
 		// intersection
-        var cx = Math.min(Math.max(fish.x, this.x), this.x + (this.width - 1));
+        var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
         var cy1 = Math.min(Math.max(fish.y, this.y), this.y + this.height);
 
 
         // Closest difference
-        var dx = fish.x - (cx + 5);
+        var dx = fish.x - cx;
         var dy1 = fish.y - cy1;
 
 
