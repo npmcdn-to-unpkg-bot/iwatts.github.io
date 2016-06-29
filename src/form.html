@@ -2,9 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', 'form button[type=submit]', function(e) {
+                var isValid = $(e.target).parents('form').isValid();
+                if(!isValid) {
+                    e.preventDefault(); //prevent the default action
+                }
+            });
+
+            $('.form-line input, .form-line textarea').on('click', function(e) {
+                var main =  $(e.target).parent('.form-line');
+                $(this).on('input', function () {
+                    if( $(this).val().length > 0 ) {
+                        main.find('.placeholder').addClass('filled');
+                    }
+                });
+                $('.placeholder').removeClass('up');
+                main.find('.placeholder').addClass("up");
+            });
+
+            $('#contact_name').on('keyup', function() {
+                var input=$(this);
+                var is_name=input.val();
+                if (is_name) {
+                    input.removeClass("invalid").addClass("valid");
+                }
+                else {
+                    input.removeClass("valid").addClass("invalid");
+                }
+            });
+            $('#contact_email').on('keyup', function() {
+                var input=$(this);
+                var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                var is_email=re.test(input.val());
+                if (is_email) {
+                    input.removeClass("invalid").addClass("valid");
+                }
+                else {
+                    input.removeClass("valid").addClass("invalid");
+                    console.log("Validating...");
+                }
+            });
+            $('#contact_comments').keyup(function(event) {
+                var input=$(this);
+                var message=$(this).val();
+                console.log(message);
+                if (message) {
+                    input.removeClass("invalid").addClass("valid");
+                }
+                else {
+                    input.removeClass("valid").addClass("invalid");
+                }
+            });
+        });
+    </script>
+    <style>
+        input[type="text"], textarea {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px inset #000;
+            transition: all 1s;
+            width: 100%;
+        }
+        textarea {
+            resize: none;
+            height: 50px;
+        }
+        .form-line {
+            min-height: 37px;
+            position: relative;
+        }
+        .placeholder {
+            position: relative;
+            top: 16px;
+            z-index: -10;
+            transition: all 0.6s;
+        }
+        .invalid {
+            border-color: #f00 !important;
+        }
+        .invalid + .error {
+            opacity: 1;
+        }
+        .valid {
+            border-color: #00f !important;
+        }
+        .error {
+            color: #f00;
+            opacity: 0;
+            transition: all 1s;
+            position: absolute;
+            left: 315px;
+            top: 12px;
+            width: 200px;
+        }
+        .up {
+            top: 0px;
+            font-size: 12px;
+        }
+        .filled {
+            top: 0px;
+            font-size: 12px;
+        }
+        body {
+            text-align: center;
+        }
+        form {
+            text-align: left;
+            width: 300px;
+            margin: 30px auto;
+        }
+    </style>
 </head>
 <body>
-
+    <form>
+        <div class="form-line">
+            <div class="placeholder">Name:</div>
+            <input id="contact_name" name="name" type="text">
+            <span class="error">Please enter your Name</span>
+        </div>
+        <div class="form-line">
+            <div class="placeholder">Email:</div>
+            <input id="contact_email" name="email" type="text">
+            <span class="error">Please enter valid Email</span>
+        </div>
+        <div class="form-line">
+            <div class="placeholder">Comments:</div>
+            <textarea id="contact_comments" name="comments"></textarea>
+            <span class="error">Please enter Comments</span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

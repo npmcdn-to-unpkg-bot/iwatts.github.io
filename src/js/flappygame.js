@@ -19,6 +19,7 @@ var backgroundPosition = 0;
 var frames = 0;
 var groundCrash = false;
 var mineCrash = false;
+var mineBoom = false;
 
 var okButton;
 var playButton;
@@ -74,6 +75,10 @@ function Fish() {
         this.rotation = 0;
     };
 
+    this.hide = function () {
+        this.y = height + 40;
+    };
+
     this.updatePlayingFish = function () {
         this.velocity += this.gravity;
         this.y += this.velocity;
@@ -123,6 +128,10 @@ function Boom() {
     this.x = 130;
     this.y = 280;
 
+    this.hide = function () {
+        this.y = -height;
+    };
+
     this.draw = function (renderingContext) {
         if (boomFrame <= boomSprite.length - 1) {
             this.y -= 1;
@@ -165,8 +174,13 @@ function MineCollection() {
 			 mine.x -= 2;
             if (i === 0) {
                 mine.detectCollision();
-				if (mineCrash) {
-
+				if (mineBoom) {
+                    this._mines.splice(i,1);
+                    i--;
+                    len--;
+                    mineBoom = false;
+                    fish.hide();
+                    crasher.hide();
 				}
             }
 
@@ -197,8 +211,6 @@ function Mine() {
      * Calculates x/y difference and use normal vector length calculation to determine
      */
     this.detectCollision = function () {
-        xloc = this.x;
-		yloc = this.y;
 
 		// intersection
         var cx = Math.min(Math.max(fish.x, this.x), this.x + this.width);
@@ -216,8 +228,11 @@ function Mine() {
 
         // Determine intersection
         if (r > d1) {
+            xloc = this.x;
+            yloc = this.y;
             currentState = states.Score;
 			mineCrash = true;
+			mineBoom = true;
         }
     };
 
@@ -349,10 +364,11 @@ function main() {
 	$("canvas").after( "<div class='score'>Total: 0</div>" );
 	$(".score").after( "<div class='gt'></div>" );
 
+    mineCrasher = new CollisionBoom();
     fish = new Fish();
     mines = new MineCollection();
     crasher = new Boom();
-	mineCrasher = new CollisionBoom();
+
 
     loadGraphics();
 	checkCookie();
