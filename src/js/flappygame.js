@@ -29,6 +29,7 @@ var total = 0;
 
 var xloc = 0;
 var yloc = 0;
+var scoredata = [];
 
 var states = {
     Splash: 0,
@@ -36,17 +37,31 @@ var states = {
     Score: 2
 };
 
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
+function loadJSON() {
+    var data_file = "js/globalhigh.json";
+    var http_request = new XMLHttpRequest();
+
+    http_request.onreadystatechange = function () {
+
+        if (http_request.readyState == 4) {
+            // Javascript function JSON.parse to parse JSON data
+            scoredata = JSON.parse(http_request.responseText);
+
+            if (scoredata.globalscore < total) {
+                $.ajax({
+                    type: 'POST',
+                    url: data_file,
+                    data: { "globalscore": total },
+                });
+                console.log(total);
+            }
+            console.log(scoredata.globalscore);
         }
     };
-    rawFile.send(null);
-};
+
+    http_request.open("GET", data_file, true);
+    http_request.send();
+}
 
 function Fish() {
     this.x = 140;
@@ -380,7 +395,7 @@ function main() {
     mines = new MineCollection();
     crasher = new Boom();
 
-
+    //loadJSON();
     loadGraphics();
 	checkCookie();
 }
@@ -410,7 +425,7 @@ function update() {
 			total = score;
 			document.cookie = "highScore=" + total;
 			$(".gt").text("High Score:" + total);
-
+            //loadJSON();
 		}
 	}
 
