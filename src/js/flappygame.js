@@ -46,15 +46,7 @@ function readTextFile(file, callback) {
         }
     };
     rawFile.send(null);
-}
-
-readTextFile("js/globalhigh.json", function(text){
-    var scoredata = JSON.parse(text);
-    if (scoredata.globalscore < total) {
-        scoredata.globalscore = total;
-    }
-    console.log(scoredata.globalscore);
-});
+};
 
 function Fish() {
     this.x = 140;
@@ -418,6 +410,7 @@ function update() {
 			total = score;
 			document.cookie = "highScore=" + total;
 			$(".gt").text("High Score:" + total);
+
 		}
 	}
 
