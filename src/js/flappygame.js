@@ -36,6 +36,26 @@ var states = {
     Score: 2
 };
 
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    };
+    rawFile.send(null);
+}
+
+readTextFile("js/globalhigh.json", function(text){
+    var scoredata = JSON.parse(text);
+    if (scoredata.globalscore < total) {
+        scoredata.globalscore = total;
+    }
+    console.log(scoredata.globalscore);
+});
+
 function Fish() {
     this.x = 140;
     this.y = 0;
