@@ -9,7 +9,7 @@
     function navController() {
         // do stuff here
         var self = this;
-        console.log('test Nav');
+        //console.log('test Nav');
     }
 
 }());
