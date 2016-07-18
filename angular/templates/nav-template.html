@@ -1,1 +1,12 @@
-<div>Nav will go here</div>
+<div class="tab-shell">
+    <div ng-repeat="tab in $ctrl.tabs" class="tab-item">
+        {{tab.name}}
+        <div class="remove" ng-click="$ctrl.removeTab(this.tab.id)"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></div>
+    </div>
+    <div class="tab-item">
+        <div class="add" ng-click="$ctrl.addTab()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
+    </div>
+</div>
+<div class="clear"></div>
+
+

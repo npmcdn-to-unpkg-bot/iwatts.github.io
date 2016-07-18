@@ -4,7 +4,8 @@
     angular.module('myApp', [
         /* listed imported modules here */
         'mainAppModule',
-        'navModule'
+        'navModule',
+        'listModule'
     ]);
 
 })();

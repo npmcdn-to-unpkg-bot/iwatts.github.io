@@ -1,0 +1,27 @@
+.remove {
+    display: inline-block;
+    background: #c00;
+    color: #fff;
+    border-radius: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+.add {
+    display: inline-block;
+    background: #0c0;
+    color: #fff;
+    border-radius: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+.tab-item {
+    display: inline-block;
+    float: left;
+    padding: 5px 8px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 0px 5px;
+}
+.clear {
+    clear: both;
+}
