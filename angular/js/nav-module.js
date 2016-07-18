@@ -12,6 +12,7 @@
         var tabID = 2;
         self.addTab = addTab;
         self.removeTab = removeTab;
+		self.viewTab = viewTab;
         self.tabs=[
             {
                 'name':'Example list',
@@ -36,6 +37,7 @@
         }
         function viewTab(tabSelection) {
             currentTab = tabSelection;
+			console.log(currentTab);
         }
     }
 
