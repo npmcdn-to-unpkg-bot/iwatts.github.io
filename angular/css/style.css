@@ -13,6 +13,16 @@
     border-radius: 15px;
     padding: 0px 3px;
     cursor: pointer;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: all 0.4s;
+}
+.add.add-hide {
+    background: #c00;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 .tab-item {
     display: inline-block;
@@ -24,4 +34,22 @@
 }
 .clear {
     clear: both;
+}
+.new-tab-form {
+    display: block;
+    clear: both;
+    margin: 16px auto;
+    opacity: 1;
+    max-height: 100px;
+    transition: all 0.8s;
+}
+button {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: transparent;
+}
+.new-tab-form.ng-hide:not(.ng-hide-animate) {
+    display: block !important;
+    opacity: 0;
+    max-height: 0px;
 }

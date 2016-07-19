@@ -1,6 +1,6 @@
 (function(){
 
-    angular.module('listModule', [navModule])
+    angular.module('listModule', [])
         .component('myList', { // the tag for using this is <my-example>
             templateUrl: "../angular/templates/list-template.html",
             controller: listController

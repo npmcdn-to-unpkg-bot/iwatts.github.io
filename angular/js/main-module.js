@@ -9,6 +9,7 @@
     function exampleController() {
         // do stuff here
         var self = this;
+        self.activeTitle = "Hello World";
         //console.log('test');
 
     }

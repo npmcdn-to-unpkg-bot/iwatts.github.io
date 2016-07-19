@@ -4,7 +4,14 @@
         <div class="remove" ng-click="$ctrl.removeTab(this.tab.id)"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></div>
     </div>
     <div class="tab-item">
-        <div class="add" ng-click="$ctrl.addTab()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
+        <div ng-class="{'add-hide':$ctrl.addingTab}" class="add" ng-click="$ctrl.toggle()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="new-tab-form" ng-show="$ctrl.addingTab">
+        Name your List: <input type="text" ng-required="string" ng-model="$ctrl.text">
+        <button type="submit" ng-click="$ctrl.addTab()">Add List</button>
     </div>
 </div>
 <div class="clear"></div>
