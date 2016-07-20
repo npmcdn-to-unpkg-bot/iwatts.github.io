@@ -1,7 +1,7 @@
 <div class="item-shell">
     <!--Sub list, task items-->
-    <div class="repeatgoeshere">
-        <div class="title">title</div>
+    <div ng-repeat="list in $ctrl.currentList" class="repeatgoeshere">
+        <div class="title">{{list.itemName}}</div>
         <div class="progress">progress</div>
         <div class="notes">notes</div>
     </div>

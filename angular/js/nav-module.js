@@ -22,6 +22,7 @@
 
 
         self.tabs = listService.tabs;
+        self.currentTab = listService.currentTab;
 
         var currentTab;
         //console.log('test Nav');
@@ -55,8 +56,8 @@
         }
 
         function viewTab(tabSelection) {
-            currentTab = tabSelection;
-			console.log(currentTab);
+            self.currentTab = listService.currentTab = tabSelection;
+            listService.showItems();
         }
     }
 

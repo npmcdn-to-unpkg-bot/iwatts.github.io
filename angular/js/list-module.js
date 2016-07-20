@@ -6,10 +6,20 @@
             controller: listController
         });
 
-    function listController() {
-        // do stuff here
+    function listController(listService, $scope) {
         var self = this;
-        // get object from nav, create and store items in object.
+
+        // get object from service, create and store items in object.
+        self.tabs = listService.tabs;
+        self.currentTab = listService.currentTab;
+        self.currentList = listService.currentList;
+
+        console.log(self.currentList);
+        
+        $scope.$on('listUpdated', function () {
+            self.currentList = listService.currentList;
+        });
+
         function addItem() {
 
         }
@@ -22,9 +32,6 @@
         function expandItem() {
 
         }
-		function showItems() {
-
-		}
 
     }
 
