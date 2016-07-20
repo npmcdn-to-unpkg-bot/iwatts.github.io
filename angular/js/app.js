@@ -5,7 +5,7 @@
         /* listed imported modules here */
         'mainAppModule',
         'navModule',
-        'listModule'
+        'listModule',
     ]);
 
 })();
