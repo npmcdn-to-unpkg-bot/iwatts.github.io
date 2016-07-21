@@ -38,7 +38,8 @@
             //push to tabs
             var newTab = {
                 'name':self.text,
-                'id': tabID
+                'id': tabID,
+				'items': [],
             };
             self.tabs.push(newTab);
 
@@ -52,7 +53,6 @@
             self.tabs = $.grep(self.tabs, function(e){
                 return e.id != id;
             });
-            console.log("remove " + id);
         }
 
         function viewTab(tabSelection) {
