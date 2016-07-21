@@ -15,6 +15,8 @@
         self.currentList = listService.currentList;
 
         self.addItem = addItem;
+		self.removeItem = removeItem;
+		self.editItem = editItem;
 
         $scope.$on('listUpdated', function () {
             self.currentList = listService.currentList;
@@ -41,12 +43,12 @@
 
         }
         function removeItem() {
-
+			console.log("remove item");
+        }
+        function editItem() {
+			console.log("edit item");
         }
         function updateItem() {
-
-        }
-        function expandItem() {
 
         }
 
