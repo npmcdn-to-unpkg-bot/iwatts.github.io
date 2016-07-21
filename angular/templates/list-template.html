@@ -1,8 +1,34 @@
 <div class="item-shell">
     <!--Sub list, task items-->
-    <div ng-repeat="list in $ctrl.currentList" class="repeatgoeshere">
-        <div class="title">{{list.itemName}}</div>
-        <div class="progress">progress</div>
-        <div class="notes">notes</div>
+    <div ng-repeat="list in $ctrl.currentList" class="single-item">
+        <div class="buttons">
+            <div class="edit-button">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            </div>
+            <div class="delete-button">
+                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="title-state">
+            <div class="title">{{list.itemName}}</div>
+            <input>
+        </div>
+        <div class="progress-state">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{list.itemProgress}}"
+                     aria-valuemin="0" aria-valuemax="100" style="width:{{list.itemProgress}}%">
+                    {{list.itemProgress}}%
+                </div>
+            </div>
+            <input>
+        </div>
+        <div class="notes-state">
+            <div class="notes">{{list.itemNotes}}</div>
+            <textarea></textarea>
+        </div>
+
+    </div>
+    <div class="single-item" ng-show="$ctrl.currentTab != null" ng-click="$ctrl.addItem()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     </div>
 </div>

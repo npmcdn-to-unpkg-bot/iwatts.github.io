@@ -14,13 +14,30 @@
         self.currentTab = listService.currentTab;
         self.currentList = listService.currentList;
 
-        console.log(self.currentList);
-        
+        self.addItem = addItem;
+
         $scope.$on('listUpdated', function () {
             self.currentList = listService.currentList;
+            self.currentTab = listService.currentTab;
         });
 
         function addItem() {
+            //generate item id
+            var itemsLength = self.currentList.length;
+            var chr = String.fromCharCode(97 + itemsLength);
+
+            var itemID = self.currentTab + chr;
+
+
+            //push to items
+            var newItem = {
+                'itemName':"New name",
+                'itemId': itemID,
+                'itemNotes': 'Add notes',
+                'itemProgress':'0',
+            };
+            self.currentList.push(newItem);
+            console.log(self.currentList);
 
         }
         function removeItem() {

@@ -4,9 +4,7 @@
     <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/css/style.css" afterPath="$PROJECT_DIR$/angular/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/index.html" afterPath="$PROJECT_DIR$/angular/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/js/list-module.js" afterPath="$PROJECT_DIR$/angular/js/list-module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/js/nav-module.js" afterPath="$PROJECT_DIR$/angular/js/nav-module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/service/list-service.js" afterPath="$PROJECT_DIR$/angular/service/list-service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/templates/list-template.html" afterPath="$PROJECT_DIR$/angular/templates/list-template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/templates/nav-template.html" afterPath="$PROJECT_DIR$/angular/templates/nav-template.html" />
@@ -43,29 +41,31 @@
       <file leaf-file-name="list-service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular/service/list-service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+            <state relative-caret-position="169">
+              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="47" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-module.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list-module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular/js/list-module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+            <state relative-caret-position="510">
+              <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-template.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list-template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular/templates/list-template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="45" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="375">
+              <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +93,8 @@
       <file leaf-file-name="nav-module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular/js/nav-module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="210">
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -103,8 +103,8 @@
       <file leaf-file-name="nav-template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular/templates/nav-template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="72" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="72" />
+            <state relative-caret-position="75">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -113,8 +113,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="160">
+              <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -183,11 +183,11 @@
         <option value="$PROJECT_DIR$/angular/js/app.js" />
         <option value="$PROJECT_DIR$/angular/index.html" />
         <option value="$PROJECT_DIR$/angular/js/nav-module.js" />
-        <option value="$PROJECT_DIR$/angular/css/style.css" />
-        <option value="$PROJECT_DIR$/angular/templates/list-template.html" />
-        <option value="$PROJECT_DIR$/angular/templates/nav-template.html" />
         <option value="$PROJECT_DIR$/angular/service/list-service.js" />
+        <option value="$PROJECT_DIR$/angular/css/style.css" />
         <option value="$PROJECT_DIR$/angular/js/list-module.js" />
+        <option value="$PROJECT_DIR$/angular/templates/nav-template.html" />
+        <option value="$PROJECT_DIR$/angular/templates/list-template.html" />
       </list>
     </option>
   </component>
@@ -235,7 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -342,7 +342,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -546,12 +546,13 @@
       <workItem from="1468419520153" duration="4172000" />
       <workItem from="1468852565702" duration="6572000" />
       <workItem from="1468935175217" duration="6692000" />
-      <workItem from="1469022177434" duration="8667000" />
+      <workItem from="1469022177434" duration="8984000" />
+      <workItem from="1469108556121" duration="6868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256358000" />
+    <option name="totallyTimeSpent" value="263543000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,6 +873,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/angular.html" />
+    <entry file="file://$PROJECT_DIR$/angular/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/angular/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -880,26 +888,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/js/main-module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="160">
+          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -912,43 +904,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular/templates/nav-template.html">
+    <entry file="file://$PROJECT_DIR$/angular/js/main-module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="72" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/js/nav-module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/templates/list-template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="45" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular/service/list-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+        <state relative-caret-position="169">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="47" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular/js/list-module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        <state relative-caret-position="510">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/templates/nav-template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/js/nav-module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/templates/list-template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,7 +2,9 @@
 
     <div ng-repeat="tab in $ctrl.tabs" class="tab-item" ng-click="$ctrl.viewTab(this.tab.id)">
         {{tab.name}}
-        <div class="remove" ng-click="$ctrl.removeTab(this.tab.id)"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></div>
+        <div class="remove" ng-click="$ctrl.removeTab(this.tab.id)">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+        </div>
     </div>
 
     <div class="tab-item">

@@ -33,6 +33,13 @@
     margin: 5px;
     cursor: pointer;
 }
+.single-item {
+    max-width: 200px;
+    float: left;
+    margin: 10px;
+    border: 1px solid;
+    padding: 10px;
+}
 .clear {
     clear: both;
 }
@@ -53,4 +60,8 @@ button {
     display: block !important;
     opacity: 0;
     max-height: 0px;
+}
+.progress-bar {
+    color: #000 !important;
+
 }

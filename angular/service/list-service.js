@@ -6,7 +6,7 @@
     function listService($rootScope) {
         // do stuff here
         var self = this;
-        self.currentTab = 1;
+        self.currentTab = null;
         self.currentList = [];
 
         self.showItems = showItems;
@@ -20,11 +20,13 @@
                         'itemName':"This is an example",
                         'itemId':'0a',
                         'itemNotes': "Blah blah blah, text goes here",
+                        'itemProgress': '10',
                     },
                     {
                         'itemName':"This is another example",
                         'itemId':'0b',
                         'itemNotes': "Blah blah blah, text goes here",
+                        'itemProgress':'20',
                     },
 
                 ],
@@ -37,11 +39,13 @@
                         'itemName':"This is an example2",
                         'itemId':'1a',
                         'itemNotes': "Blah blah blah, text goes here",
+                        'itemProgress':'0',
                     },
                     {
                         'itemName':"This is another example2",
                         'itemId':'1b',
                         'itemNotes': "Blah blah blah, text goes here",
+                        'itemProgress':'0',
                     },
 
                 ],
