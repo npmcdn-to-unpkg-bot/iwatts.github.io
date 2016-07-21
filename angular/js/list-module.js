@@ -39,12 +39,10 @@
                 'itemProgress':'0',
             };
             self.currentList.push(newItem);
-            console.log(self.currentList);
 
         }
         function removeItem(iid) {
 			self.currentList.splice(iid, 1);
-			console.log("remove item " + iid);
         }
         function editItem(iid) {
 			console.log("edit item " + iid);
