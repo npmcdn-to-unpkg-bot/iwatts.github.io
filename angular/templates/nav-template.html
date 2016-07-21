@@ -16,7 +16,7 @@
     <div class="clear"></div>
     <div class="new-tab-form" ng-show="$ctrl.addingTab">
         Name your List: <input type="text" ng-required="string" ng-model="$ctrl.text">
-        <button type="submit" ng-click="$ctrl.addTab(), $ctrl.toggle()">Add List</button>
+        <button type="submit" ng-click="$ctrl.addTab(); $ctrl.toggle()">Add List</button>
     </div>
 </div>
 <div class="clear"></div>
