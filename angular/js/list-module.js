@@ -42,11 +42,11 @@
             console.log(self.currentList);
 
         }
-        function removeItem() {
-			console.log("remove item");
+        function removeItem(iid) {
+			console.log("remove item " + iid);
         }
-        function editItem() {
-			console.log("edit item");
+        function editItem(iid) {
+			console.log("edit item " + iid);
         }
         function updateItem() {
 
