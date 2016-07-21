@@ -65,3 +65,17 @@ button {
     color: #000 !important;
 
 }
+.buttons div {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	border-radius: 5px;
+}
+.buttons .delete-button {
+	background-color: #c00;
+}
+.buttons .delete-button {
+	background-color: #00c;
+}
