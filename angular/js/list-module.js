@@ -43,9 +43,7 @@
 
         }
         function removeItem(iid) {
-			self.currentList = $.grep(self.currentList, function(e){
-                return e.iid != iid;
-            });
+			self.currentList.splice(iid, 1);
 			console.log("remove item " + iid);
         }
         function editItem(iid) {
