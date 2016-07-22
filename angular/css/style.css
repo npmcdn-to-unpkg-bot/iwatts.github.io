@@ -8,6 +8,7 @@
 }
 .add {
     display: inline-block;
+    text-align: center;
     background: #0c0;
     color: #fff;
     border-radius: 15px;
@@ -20,9 +21,9 @@
 }
 .add.add-hide {
     background: #c00;
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 .tab-item {
     display: inline-block;
@@ -79,4 +80,67 @@ button {
 }
 .buttons .edit-button {
 	background-color: #00c;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: all 0.4s;
+}
+.edit .buttons .edit-button {
+    background-color: #c0c;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.title-state,
+.progress-state,
+.notes-state {
+    position: relative;
+}
+
+.edit .title-state .title {
+    display: none;
+}
+
+.edit .progress-state .progress {
+    display: none;
+}
+
+.edit .notes-state .notes{
+    display: none;
+}
+
+.title-state .title-input {
+    display: none;
+}
+.progress-state .progress-input {
+    display: none;
+}
+.notes-state .notes-input {
+    display: none;
+}
+
+.edit .title-state .title-input {
+    display: block;
+}
+.edit .progress-state .progress-input {
+    display: block;
+}
+.edit .notes-state .notes-input {
+    display: block;
+}
+.buttons {
+    position: relative;
+}
+.buttons .notice {
+    color: #c0c;
+    position: absolute;
+    left: 23px;
+    top: 2px;
+    width: 105px;
+    font-size: 11px;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.edit .buttons .notice {
+    opacity: 1;
 }

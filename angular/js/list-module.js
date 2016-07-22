@@ -13,10 +13,12 @@
         self.tabs = listService.tabs;
         self.currentTab = listService.currentTab;
         self.currentList = listService.currentList;
+        self.editState = false;
 
         self.addItem = addItem;
 		self.removeItem = removeItem;
 		self.editItem = editItem;
+		self.updateItem = updateItem;
 
         $scope.$on('listUpdated', function () {
             self.currentList = listService.currentList;
@@ -44,11 +46,13 @@
         function removeItem(iid) {
 			self.currentList.splice(iid, 1);
         }
-        function editItem(iid) {
-			console.log("edit item " + iid);
+        function editItem(list) {
+            list.editState = !list.editState;
         }
-        function updateItem() {
+        function updateItem($event, item) {
+            var newContent = $event.target.value;
 
+            console.log(newContent);
         }
 
     }

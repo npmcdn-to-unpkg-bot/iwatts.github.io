@@ -20,13 +20,13 @@
                         'itemName':"This is an example",
                         'itemId':'0a',
                         'itemNotes': "Blah blah blah, text goes here",
-                        'itemProgress': '10',
+                        'itemProgress': 10,
                     },
                     {
                         'itemName':"This is another example",
                         'itemId':'0b',
                         'itemNotes': "Blah blah blah, text goes here",
-                        'itemProgress':'20',
+                        'itemProgress':20,
                     },
 
                 ],
@@ -39,13 +39,13 @@
                         'itemName':"This is an example2",
                         'itemId':'1a',
                         'itemNotes': "Blah blah blah, text goes here",
-                        'itemProgress':'0',
+                        'itemProgress':0,
                     },
                     {
                         'itemName':"This is another example2",
                         'itemId':'1b',
                         'itemNotes': "Blah blah blah, text goes here",
-                        'itemProgress':'0',
+                        'itemProgress':0,
                     },
 
                 ],
