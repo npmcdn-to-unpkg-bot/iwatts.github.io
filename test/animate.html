@@ -121,7 +121,7 @@
 		.ball-2 {
 			position: relative;
 			width: 20px;
-		    height: 20px;
+		    height: 100%;
 		    animation: bounceX 2.5s infinite ease-in;
 		    
 		}
@@ -139,6 +139,9 @@
 			position: relative;
 			display: inline-block;
 		}
+		.box-2:hover .ball-2 {
+			border: 1px dashed #000;
+		}
 		.leafbox {
 			position: relative;
 			margin: 5px 0;
@@ -151,9 +154,10 @@
 			border: 1px dashed #000;
 		}
 		.rotateLeaf {
+			top: 60px;
 			position: absolute;
 			width: 50px;
-			height: 320px;
+			height: 200px;
 			animation: travel_leaf 4.8s linear 0s infinite alternate;
 		}
 		.leaf {
