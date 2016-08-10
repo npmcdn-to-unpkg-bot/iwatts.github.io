@@ -49,8 +49,14 @@ var person = {
         return this.firstName + " " + this.lastName;
     }
 };
-if (person.fullName != "Isaac Watts") {
-    /* Pseudo code, set person to employee */
+
+var employees = [];
+
+for(var i = 0; i < employees.length; i++) {
+    if (employees[i].fullName != "Isaac Watts") {
+        /* Pseudo code, set person to employee */
+        employees.push(person);
+    };
 };
                             </pre>
                         </div>
