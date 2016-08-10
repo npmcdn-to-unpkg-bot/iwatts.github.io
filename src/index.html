@@ -41,7 +41,7 @@
                         <div class="feature-image" style="background-image: url('img/default-avatar.png')"></div>
                         <div class="feature-text">
                             <pre style="overflow: auto;">
-/* Vars and things go in here. */
+/* create Isaac */
 var person = {
     firstName:"Isaac",
     lastName:"Watts",
@@ -50,12 +50,19 @@ var person = {
     }
 };
 
+/* create list of employees */
 var employees = [];
 
+/*set company success*/
+var companySuccess = null;
+
+/* Check list of employees */
 for(var i = 0; i < employees.length; i++) {
+    /* Check if Isaac is employee */
     if (employees[i].fullName != "Isaac Watts") {
-        /* Pseudo code, set person to employee */
+        /* Push Isaac to employee */
         employees.push(person);
+        companySuccess = true;
     };
 };
                             </pre>
