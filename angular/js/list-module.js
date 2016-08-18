@@ -38,7 +38,7 @@
                 'itemName':"New name",
                 'itemId': itemID,
                 'itemNotes': 'Add notes',
-                'itemProgress':'0',
+                'itemProgress':0,
             };
             self.currentList.push(newItem);
 
@@ -52,7 +52,7 @@
         function updateItem($event, item) {
             var newContent = $event.target.value;
 
-            console.log(newContent);
+            //console.log(newContent);
         }
 
     }
