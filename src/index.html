@@ -40,17 +40,32 @@
                     <div class="content-left">
                         <div class="feature-image" style="background-image: url('img/default-avatar.png')"></div>
                         <div class="feature-text">
-                            <p>/* Vars and things go in here. */</p>
-                            <p>var person = {</p>
-                            <p>&emsp;firstName:"Isaac",</p>
-                            <p>&emsp;lastName:"Watts",</p>
-                            <p>&emsp;fullName : function() {</p>
-                            <p>&emsp;&emsp;return this.firstName + " " + this.lastName;</p>
-                            <p>&emsp;}</p>
-                            <p>};</p>
-                            <p>if (person.fullName != "Isaac Watts") {</p>
-                            <p>&emsp;/* Pseudo code, set person to employee */</p>
-                            <p>};</p>
+                            <pre style="overflow: auto;">
+/* create Isaac */
+var person = {
+    firstName:"Isaac",
+    lastName:"Watts",
+    fullName : function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+/* create list of employees */
+var employees = [];
+
+/*set company success*/
+var companySuccess = null;
+
+/* Check list of employees */
+for(var i = 0; i < employees.length; i++) {
+    /* Check if Isaac is employee */
+    if (employees[i].fullName != "Isaac Watts") {
+        /* Push Isaac to employee */
+        employees.push(person);
+        companySuccess = true;
+    };
+};
+                            </pre>
                         </div>
                     </div>
                     <div class="content-right">
