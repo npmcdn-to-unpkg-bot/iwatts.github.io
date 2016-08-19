@@ -45,6 +45,7 @@
 
             /*add new tab id*/
             tabID++;
+            $localStorage.tabs = self.tabs;
 
         }
         function removeTab(id) {

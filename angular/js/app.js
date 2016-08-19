@@ -6,6 +6,19 @@
         'mainAppModule',
         'navModule',
         'listModule',
+        'ui.router',
+        'ngStorage'
     ]);
 
 })();
+
+(function( $ ) {
+
+    var $container = $('.masonry-container');
+    $container.masonry({
+        columnWidth: '.item',
+        itemSelector: '.item'
+    });
+    console.log("Masonry running");
+
+})(jQuery);

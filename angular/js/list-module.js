@@ -6,7 +6,7 @@
             controller: listController
         });
 
-    function listController(listService, $scope) {
+    function listController(listService, $scope, $localStorage) {
         var self = this;
 
         // get object from service, create and store items in object.
@@ -35,11 +35,12 @@
 
             //push to items
             var newItem = {
-                'itemName':"New name",
+                'itemName':"",
                 'itemId': itemID,
-                'itemNotes': 'Add notes',
-                'itemProgress':0,
+                'itemNotes': '',
+                'itemProgress':"",
             };
+            newItem.editState = true;
             self.currentList.push(newItem);
 
         }
@@ -49,11 +50,12 @@
         function editItem(list) {
             list.editState = !list.editState;
         }
-        function updateItem($event, item) {
+        function updateItem($event) {
             var newContent = $event.target.value;
 
             //console.log(newContent);
         }
+        $localStorage.tabs = self.tabs;
 
     }
 

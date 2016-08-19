@@ -3,7 +3,7 @@
     angular.module('myApp')
         .service('listService', listService);
 
-    function listService($rootScope) {
+    function listService($rootScope, $localStorage) {
         // do stuff here
         var self = this;
         self.currentTab = null;
@@ -51,6 +51,9 @@
                 ],
             },
         ];
+        if ($localStorage.tabs != null) {
+            self.tabs = $localStorage.tabs;
+        }
 
         function showItems() {
             //check CurrentTab and show items.

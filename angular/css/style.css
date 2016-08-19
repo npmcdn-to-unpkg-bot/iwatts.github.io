@@ -34,13 +34,17 @@
     margin: 5px;
     cursor: pointer;
 }
+.item-shell {
+    position: relative;
+    overflow: auto;
+}
 .single-item {
     max-width: 200px;
     min-width: 200px;
-    float: left;
     margin: 10px;
     border: 1px solid;
     padding: 10px;
+    break-inside: avoid-column;
 }
 .clear {
     clear: both;
