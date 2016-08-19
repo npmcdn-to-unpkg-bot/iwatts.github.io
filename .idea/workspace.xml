@@ -4,11 +4,6 @@
     <list default="true" id="399b6c2b-4975-4118-890b-f9cd392510ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/css/style.css" afterPath="$PROJECT_DIR$/angular/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/index.html" afterPath="$PROJECT_DIR$/angular/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/js/app.js" afterPath="$PROJECT_DIR$/angular/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/js/list-module.js" afterPath="$PROJECT_DIR$/angular/js/list-module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/js/nav-module.js" afterPath="$PROJECT_DIR$/angular/js/nav-module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/service/list-service.js" afterPath="$PROJECT_DIR$/angular/service/list-service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/templates/list-template.html" afterPath="$PROJECT_DIR$/angular/templates/list-template.html" />
     </list>
     <ignored path="untitled.iws" />
@@ -60,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-template.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list-template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular/templates/list-template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+            <state relative-caret-position="400">
+              <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -112,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="375">
+              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -186,10 +181,10 @@
         <option value="$PROJECT_DIR$/angular/js/nav-module.js" />
         <option value="$PROJECT_DIR$/angular/service/list-service.js" />
         <option value="$PROJECT_DIR$/angular/js/list-module.js" />
-        <option value="$PROJECT_DIR$/angular/css/style.css" />
         <option value="$PROJECT_DIR$/angular/index.html" />
         <option value="$PROJECT_DIR$/angular/js/app.js" />
         <option value="$PROJECT_DIR$/angular/templates/list-template.html" />
+        <option value="$PROJECT_DIR$/angular/css/style.css" />
       </list>
     </option>
   </component>
@@ -518,12 +513,12 @@
       <workItem from="1469540804012" duration="601000" />
       <workItem from="1470319669170" duration="151000" />
       <workItem from="1471527286179" duration="1712000" />
-      <workItem from="1471615373429" duration="5363000" />
+      <workItem from="1471615373429" duration="5927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282277000" />
+    <option name="totallyTimeSpent" value="282841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -875,14 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular/templates/nav-template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -917,11 +904,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/angular/templates/list-template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        <state relative-caret-position="400">
+          <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

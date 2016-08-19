@@ -19,6 +19,12 @@
     transform: rotate(0deg);
     transition: all 0.4s;
 }
+.add-item {
+    background-color: #5bc0de;
+    border-radius: 10px;
+    width: 35px;
+    min-width: 0px;
+}
 .add.add-hide {
     background: #c00;
     -ms-transform: rotate(-45deg);
