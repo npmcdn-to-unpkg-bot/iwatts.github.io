@@ -1,0 +1,24 @@
+<div class="tab-shell container">
+
+    <div ng-repeat="tab in $ctrl.tabs" class="tab-item" ng-click="$ctrl.viewTab(this.tab.id)">
+        {{tab.name}}
+        <div class="remove" ng-click="$ctrl.removeTab(this.tab.id)">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+        </div>
+    </div>
+
+    <div class="tab-item">
+        <div ng-class="{'add-hide':$ctrl.addingTab}" class="add" ng-click="$ctrl.toggle()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="new-tab-form" ng-show="$ctrl.addingTab">
+        Name your List: <input type="text" ng-required="string" ng-model="$ctrl.text">
+        <button type="submit" ng-click="$ctrl.addTab(); $ctrl.toggle()">Add List</button>
+    </div>
+</div>
+<div class="clear"></div>
+
+

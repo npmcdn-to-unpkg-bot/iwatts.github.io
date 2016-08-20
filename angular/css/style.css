@@ -1,0 +1,157 @@
+.remove {
+    display: inline-block;
+    background: #c00;
+    color: #fff;
+    border-radius: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+.add {
+    display: inline-block;
+    text-align: center;
+    background: #0c0;
+    color: #fff;
+    border-radius: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: all 0.4s;
+}
+.add-item {
+    background-color: #5bc0de;
+    border-radius: 10px;
+    width: 35px;
+    min-width: 0px;
+}
+.add.add-hide {
+    background: #c00;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.tab-item {
+    display: inline-block;
+    float: left;
+    padding: 5px 8px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.item-shell {
+    position: relative;
+    overflow: auto;
+}
+.single-item {
+    max-width: 200px;
+    min-width: 200px;
+    margin: 10px;
+    border: 1px solid;
+    padding: 10px;
+    break-inside: avoid-column;
+}
+.clear {
+    clear: both;
+}
+.new-tab-form {
+    display: block;
+    clear: both;
+    margin: 16px auto;
+    opacity: 1;
+    max-height: 100px;
+    transition: all 0.8s;
+}
+button {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: transparent;
+}
+.new-tab-form.ng-hide:not(.ng-hide-animate) {
+    display: block !important;
+    opacity: 0;
+    max-height: 0px;
+}
+.progress-bar {
+    color: #000 !important;
+
+}
+.buttons div {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	border-radius: 5px;
+}
+.buttons .delete-button {
+	background-color: #c00;
+	float: right;
+}
+.buttons .edit-button {
+	background-color: #00c;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: all 0.4s;
+}
+.edit .buttons .edit-button {
+    background-color: #c0c;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.title-state,
+.progress-state,
+.notes-state {
+    position: relative;
+}
+
+.edit .title-state .title {
+    display: none;
+}
+
+.edit .progress-state .progress {
+    display: none;
+}
+
+.edit .notes-state .notes{
+    display: none;
+}
+
+.title-state .title-input {
+    display: none;
+}
+.progress-state .progress-input {
+    display: none;
+}
+.notes-state .notes-input {
+    display: none;
+}
+
+.edit .title-state .title-input {
+    display: block;
+}
+.edit .progress-state .progress-input {
+    display: block;
+}
+.edit .notes-state .notes-input {
+    display: block;
+}
+.buttons {
+    position: relative;
+}
+.buttons .notice {
+    color: #c0c;
+    position: absolute;
+    left: 23px;
+    top: 2px;
+    width: 105px;
+    font-size: 11px;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.edit .buttons .notice {
+    opacity: 1;
+}
