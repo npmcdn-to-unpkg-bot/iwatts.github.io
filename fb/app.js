@@ -2,23 +2,19 @@
 
     // this CREATES the myApp module (because it has the second, array parameter)
     angular.module('app', [
+        /* listed imported modules here */
         'ui.router',
         'ngMaterial',
-        'ngStorage',
+        /* Step #3: include the firebase module in the module dependency list for your app */
         'firebase'
     ])
-        .config(myAppConfig)
-        .run(myAppRun);
+        .config(myAppConfig);
 
     function myAppConfig($urlRouterProvider, $mdThemingProvider) {
-        $urlRouterProvider.otherwise('char-detail');
+        $urlRouterProvider.otherwise('/main');
         $mdThemingProvider.theme('default')
             .primaryPalette('blue')
             .accentPalette('red');
-    }
-
-    function myAppRun($state) {
-        $state.go('char-detail');
     }
 
 })();
