@@ -9,13 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var StarWarsCharacter = (function () {
+    function StarWarsCharacter() {
+    }
+    return StarWarsCharacter;
+}());
+exports.StarWarsCharacter = StarWarsCharacter;
 var AppComponent = (function () {
     function AppComponent() {
+        this.character = {
+            name: 'C-3PO',
+            height: 123
+        };
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>'
+            template: "\n    <h1>Star Wars Character</h1>\n    <h2>{{character.name}} Details:</h2>\n    <p>Name: <input [(ngModel)]=\"character.name\"></p>\n    <p>Height: {{character.height}}</p>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
